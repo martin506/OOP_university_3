@@ -1,14 +1,10 @@
 #include "students-list-repository.h"
 
-StudentsListRepository::StudentsListRepository(InputManagerRepositoryContract* inputManagerRepository)
+StudentsListRepository::StudentsListRepository(InputManagerRepositoryContract& inputManagerRepository)
     : inputManagerRepository(inputManagerRepository) {}
 
-StudentsListRepository::~StudentsListRepository() {
-    students.clear();
-}
-
 void StudentsListRepository::save(StudentWithGradesVector studentWithGradesVector) {
-    students.push_back(studentWithGradesVector);
+    students.push_back(std::move(studentWithGradesVector));
 }
 
 StudentContainer StudentsListRepository::getStudentWithGradesVector() {
@@ -16,7 +12,7 @@ StudentContainer StudentsListRepository::getStudentWithGradesVector() {
 }
 
 void StudentsListRepository::sortData() {
-    InputManager inputManager = inputManagerRepository->getInputManager();
+    InputManager inputManager = inputManagerRepository.getInputManager();
     switch (inputManager.sortingChoice) {
         case InputManager::SURNAME:
             students.sort([](const StudentWithGradesVector& a, const StudentWithGradesVector& b) {

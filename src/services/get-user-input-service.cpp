@@ -1,6 +1,6 @@
 #include "abstract/get-user-input-service.h"
 
-GetUserInputService::GetUserInputService(InputManagerRepositoryContract* inputManagerRepo)
+GetUserInputService::GetUserInputService(InputManagerRepositoryContract& inputManagerRepo)
     : inputManagerRepositoryContract(inputManagerRepo) {}
 
 void GetUserInputService::execute(bool needsParameter) {
@@ -9,6 +9,12 @@ void GetUserInputService::execute(bool needsParameter) {
 
         int sortingChoice;
         std::string fileSize;
+
+        std::cout << "Is creating data files with students (0: false, 1: true): ";
+        std::cin >> inputManager.isCreatingDataFiles;
+        if (std::cin.fail()) {
+            throw std::invalid_argument("Invalid input for testing mode");
+        }
 
         std::cout << "Enter Sorting Choice (0: SURNAME, 1: NAME, 2: FINAL_GRADE_WITH_AVERAGE, 3: FINAL_GRADE_WITH_MEDIAN): ";
         std::cin >> sortingChoice;
@@ -74,7 +80,7 @@ void GetUserInputService::execute(bool needsParameter) {
             throw std::invalid_argument("Invalid file size");
         }
 
-        inputManagerRepositoryContract->setInputManager(inputManager);
+        inputManagerRepositoryContract.setInputManager(inputManager);
     } catch (const std::invalid_argument& e) {
         std::cerr << "Error: " << e.what() << std::endl;
     }

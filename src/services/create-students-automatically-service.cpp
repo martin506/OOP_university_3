@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stdexcept>
 
-CreateStudentsAutomaticallyService::CreateStudentsAutomaticallyService(StudentsRepositoryContract* studentsRepository)
+CreateStudentsAutomaticallyService::CreateStudentsAutomaticallyService(StudentsRepositoryContract& studentsRepository)
     : studentsRepository(studentsRepository) {
     std::srand(std::time(nullptr));
 }
@@ -28,12 +28,12 @@ void CreateStudentsAutomaticallyService::execute(int numberOfStudents) {
                 grades.push_back(getRandomGrade());
             }
             int examGrade = getRandomGrade();
-
+    
             StudentWithGradesVector studentWithGrades;
             studentWithGrades.grades = grades;
             studentWithGrades.student = Student{name, surname, examGrade, studentWithGrades.calculateAverage(), studentWithGrades.calculateMedian()};
-
-            studentsRepository->save(studentWithGrades);
+    
+            studentsRepository.save(studentWithGrades);
         }
 
         std::cout << "Generated " << numberOfStudents << " students successfully." << std::endl;

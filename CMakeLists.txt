@@ -41,4 +41,4 @@ set(SOURCES
 )
 
 # Add executable
-add_executable(OOPUzduotis1 ${SOURCES})
+add_executable(OOPUzduotis2 ${SOURCES})

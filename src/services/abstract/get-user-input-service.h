@@ -8,10 +8,10 @@
 
 class GetUserInputService : public GetUserInputUseCase {
 private:
-    InputManagerRepositoryContract* inputManagerRepositoryContract;
+    InputManagerRepositoryContract& inputManagerRepositoryContract;
 
 public:
-    GetUserInputService(InputManagerRepositoryContract* inputManagerRepo);
+    GetUserInputService(InputManagerRepositoryContract& inputManagerRepo);
     void execute(bool needsParameter) override;
 };
 

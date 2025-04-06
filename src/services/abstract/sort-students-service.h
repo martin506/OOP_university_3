@@ -6,10 +6,10 @@
 
 class SortStudentsService : public SortStudentsUseCase {
 private:
-    StudentsRepositoryContract* studentsRepository;
+    StudentsRepositoryContract& studentsRepository;
 
 public:
-    SortStudentsService(StudentsRepositoryContract* studentsRepository);
+    SortStudentsService(StudentsRepositoryContract& studentsRepository);
     void execute(bool needsParameter) override;
 };
 

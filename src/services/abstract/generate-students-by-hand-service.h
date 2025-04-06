@@ -8,10 +8,10 @@
 
 class GenerateStudentsByHandService : public GenerateStudentsByHandUseCase {
 private:
-    StudentsRepositoryContract* studentsRepository;
+    StudentsRepositoryContract& studentsRepository;
 
 public:
-    GenerateStudentsByHandService(StudentsRepositoryContract* repo);
+    GenerateStudentsByHandService(StudentsRepositoryContract& repo);
     void execute(bool needsParameter) override;
 };
 

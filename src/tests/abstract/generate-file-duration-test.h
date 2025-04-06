@@ -6,10 +6,10 @@
 
 class GenerateFileDurationTest {
 private:
-    GenerateStudentsToFileUseCase* generateService;
+    GenerateStudentsToFileUseCase& generateService;
 
 public:
-    GenerateFileDurationTest(GenerateStudentsToFileUseCase* generateService);
+    GenerateFileDurationTest(GenerateStudentsToFileUseCase& generateService);
     void testGenerateFileDuration(const std::string& fileSize);
 };
 

@@ -1,6 +1,8 @@
 #ifndef STUDENTS_DATA_SORT_RUNNER_H
 #define STUDENTS_DATA_SORT_RUNNER_H
 
+#include <memory>
+
 #include "../repositories/contracts/input-manager-repository-contract.h"
 #include "../repositories/abstract/input-manager-repository.h"
 #include "../repositories/contracts/students-repository-contract.h"
@@ -31,29 +33,30 @@
 
 #include "../tests/abstract/tests-controller.h"
 
-class StudentsDataSortRunner {
+class StudentsDataSortRunner
+{
 private:
-    InputManagerRepositoryContract* inputManagerRepo;
-    StudentsRepositoryContract* studentsRepo;
-    StudentsRepositoryContract* goodStudentsRepo;
-    StudentsRepositoryContract* badStudentsRepo;
+    std::unique_ptr<InputManagerRepositoryContract> inputManagerRepo;
+    std::unique_ptr<StudentsRepositoryContract> studentsRepo;
+    std::unique_ptr<StudentsRepositoryContract> goodStudentsRepo;
+    std::unique_ptr<StudentsRepositoryContract> badStudentsRepo;
 
-    PrintStudentsToFileUseCase* printStudentsToFileService;
-    PrintStudentsToFileUseCase* printGoodStudentsToFileService;
-    PrintStudentsToFileUseCase* printBadStudentsToFileService;
+    std::unique_ptr<PrintStudentsToFileUseCase> printStudentsToFileService;
+    std::unique_ptr<PrintStudentsToFileUseCase> printGoodStudentsToFileService;
+    std::unique_ptr<PrintStudentsToFileUseCase> printBadStudentsToFileService;
 
-    CreateStudentsAutomaticallyUseCase* createStudentsAutomaticallyService;
-    GenerateStudentsByHandUseCase* generateStudentsByHandService;
-    GenerateStudentsToFileUseCase* generateStudentsToFileService;
-    GetUserInputUseCase* getUserInputService;
-    PrintStudentsToConsoleUseCase* printStudentsToConsoleService;
-    SaveStudentsDataFromFileUseCase* saveStudentsDataFromFileService;
-    SortStudentsUseCase* sortStudentsService;
-    SortStudentsToBadAndGoodUseCase* sortStudentsToBadAndGoodService;
-    SortStudentsToBadAndGoodUseCase* sortStudentsToBadAndGoodServiceStrategy2;
+    std::unique_ptr<CreateStudentsAutomaticallyUseCase> createStudentsAutomaticallyService;
+    std::unique_ptr<GenerateStudentsByHandUseCase> generateStudentsByHandService;
+    std::unique_ptr<GenerateStudentsToFileUseCase> generateStudentsToFileService;
+    std::unique_ptr<GetUserInputUseCase> getUserInputService;
+    std::unique_ptr<PrintStudentsToConsoleUseCase> printStudentsToConsoleService;
+    std::unique_ptr<SaveStudentsDataFromFileUseCase> saveStudentsDataFromFileService;
+    std::unique_ptr<SortStudentsUseCase> sortStudentsService;
+    std::unique_ptr<SortStudentsToBadAndGoodUseCase> sortStudentsToBadAndGoodService;
+    std::unique_ptr<SortStudentsToBadAndGoodUseCase> sortStudentsToBadAndGoodServiceStrategy2;
 
-    TestsController testsController;
-
+    std::unique_ptr<TestsController> testsController;
+    
 public:
     StudentsDataSortRunner();
     void run();
@@ -63,4 +66,4 @@ public:
     void updateServices();
 };
 
-#endif 
+#endif

@@ -16,23 +16,23 @@ private:
     GenerateFileDurationTest generateFileDurationTest;
     ModuleTest moduleTest;
     InputDurationTest inputDurationTest;
-    StudentsRepositoryContract* studentsRepo;
-    GenerateStudentsToFileUseCase* generateService;
-    SaveStudentsDataFromFileUseCase* saveService;
-    SortStudentsUseCase* sortService;
-    SortStudentsToBadAndGoodUseCase* sortToBadAndGoodService;
-    PrintStudentsToFileUseCase* printGoodStudentsService;
-    PrintStudentsToFileUseCase* printBadStudentsService;
+    StudentsRepositoryContract& studentsRepo;
+    GenerateStudentsToFileUseCase& generateService;
+    SaveStudentsDataFromFileUseCase& saveService;
+    SortStudentsUseCase& sortService;
+    SortStudentsToBadAndGoodUseCase& sortToBadAndGoodService;
+    PrintStudentsToFileUseCase& printGoodStudentsService;
+    PrintStudentsToFileUseCase& printBadStudentsService;
 
 public:
     TestsController(
-        StudentsRepositoryContract* studentsRepo,
-        GenerateStudentsToFileUseCase* generateService,
-        SaveStudentsDataFromFileUseCase* saveService,
-        SortStudentsUseCase* sortService,
-        SortStudentsToBadAndGoodUseCase* sortToBadAndGoodService,
-        PrintStudentsToFileUseCase* printGoodStudentsService,
-        PrintStudentsToFileUseCase* printBadStudentsService
+        StudentsRepositoryContract& studentsRepo,
+        GenerateStudentsToFileUseCase& generateService,
+        SaveStudentsDataFromFileUseCase& saveService,
+        SortStudentsUseCase& sortService,
+        SortStudentsToBadAndGoodUseCase& sortToBadAndGoodService,
+        PrintStudentsToFileUseCase& printGoodStudentsService,
+        PrintStudentsToFileUseCase& printBadStudentsService
     );
 
     void runModuleTest(const std::string& filename);

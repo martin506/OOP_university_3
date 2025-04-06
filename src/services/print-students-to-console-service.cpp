@@ -3,7 +3,7 @@
 #include <iomanip>
 #include <variant>
 
-PrintStudentsToConsoleService::PrintStudentsToConsoleService(StudentsRepositoryContract* studentsRepository)
+PrintStudentsToConsoleService::PrintStudentsToConsoleService(StudentsRepositoryContract& studentsRepository)
     : studentsRepository(studentsRepository) {}
 
 void PrintStudentsToConsoleService::execute(bool needsParameter) {
@@ -14,7 +14,7 @@ void PrintStudentsToConsoleService::execute(bool needsParameter) {
                   << std::left << std::setw(15) << "Avg Grade"
                   << std::left << std::setw(15) << "Med Grade" << "\n";
 
-        StudentContainer students = studentsRepository->getStudentWithGradesVector();
+        StudentContainer students = studentsRepository.getStudentWithGradesVector();
 
         std::visit([](auto&& container) {
             for (const auto& studentWithGrades : container) {

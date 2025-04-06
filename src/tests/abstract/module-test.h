@@ -9,19 +9,19 @@
 
 class ModuleTest {
 private:
-    SaveStudentsDataFromFileUseCase* saveService;
-    SortStudentsUseCase* sortService;
-    SortStudentsToBadAndGoodUseCase* sortToBadAndGoodService;
-    PrintStudentsToFileUseCase* printGoodStudentsService;
-    PrintStudentsToFileUseCase* printBadStudentsService;
+    SaveStudentsDataFromFileUseCase& saveService;
+    SortStudentsUseCase& sortService;
+    SortStudentsToBadAndGoodUseCase& sortToBadAndGoodService;
+    PrintStudentsToFileUseCase& printGoodStudentsService;
+    PrintStudentsToFileUseCase& printBadStudentsService;
 
 public:
     ModuleTest(
-        SaveStudentsDataFromFileUseCase* saveService,
-        SortStudentsUseCase* sortService,
-        SortStudentsToBadAndGoodUseCase* sortToBadAndGoodService,
-        PrintStudentsToFileUseCase* printGoodStudentsService,
-        PrintStudentsToFileUseCase* printBadStudentsService
+        SaveStudentsDataFromFileUseCase& saveService,
+        SortStudentsUseCase& sortService,
+        SortStudentsToBadAndGoodUseCase& sortToBadAndGoodService,
+        PrintStudentsToFileUseCase& printGoodStudentsService,
+        PrintStudentsToFileUseCase& printBadStudentsService
     );
 
     void testModule(const std::string& filename);

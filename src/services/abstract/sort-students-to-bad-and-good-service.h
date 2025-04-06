@@ -6,12 +6,12 @@
 
 class SortStudentsToBadAndGoodService : public SortStudentsToBadAndGoodUseCase {
 private:
-    StudentsRepositoryContract* goodStudentsRepository;
-    StudentsRepositoryContract* badStudentsRepository;
-    StudentsRepositoryContract* studentsRepository;
+    StudentsRepositoryContract& goodStudentsRepository;
+    StudentsRepositoryContract& badStudentsRepository;
+    StudentsRepositoryContract& studentsRepository;
 
 public:
-    SortStudentsToBadAndGoodService(StudentsRepositoryContract* goodRepository, StudentsRepositoryContract* badRepo, StudentsRepositoryContract* studentsRepository);
+    SortStudentsToBadAndGoodService(StudentsRepositoryContract& goodRepository, StudentsRepositoryContract& badRepo, StudentsRepositoryContract& studentsRepository);
     void execute(bool needsParameter) override;
 };
 

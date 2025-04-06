@@ -10,11 +10,11 @@
 class StudentsDequeRepository : public StudentsRepositoryContract {
 private:
     std::deque<StudentWithGradesVector> students;
-    InputManagerRepositoryContract* inputManagerRepositoryRepository;
+    InputManagerRepositoryContract& inputManagerRepository; 
 
 public:
-    StudentsDequeRepository(InputManagerRepositoryContract* inputManagerRepositoryRepository);
-    ~StudentsDequeRepository();
+    explicit StudentsDequeRepository(InputManagerRepositoryContract& inputManagerRepository);
+    ~StudentsDequeRepository() override = default;
 
     void save(StudentWithGradesVector studentWithGradesVector) override;
     StudentContainer getStudentWithGradesVector() override;

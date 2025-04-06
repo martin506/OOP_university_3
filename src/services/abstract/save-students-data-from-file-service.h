@@ -11,10 +11,10 @@
 
 class SaveStudentsDataFromFileService : public SaveStudentsDataFromFileUseCase {
 private:
-    StudentsRepositoryContract* studentsRepository;
+    StudentsRepositoryContract& studentsRepository;
 
 public:
-    SaveStudentsDataFromFileService(StudentsRepositoryContract* repo);
+    SaveStudentsDataFromFileService(StudentsRepositoryContract& repo);
     void execute(std::string filename) override;
 };
 

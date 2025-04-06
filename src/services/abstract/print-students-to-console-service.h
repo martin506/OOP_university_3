@@ -8,10 +8,10 @@
 
 class PrintStudentsToConsoleService : public PrintStudentsToConsoleUseCase {
 private:
-    StudentsRepositoryContract* studentsRepository;
+    StudentsRepositoryContract& studentsRepository;
 
 public:
-    PrintStudentsToConsoleService(StudentsRepositoryContract* studentsRepository);
+    PrintStudentsToConsoleService(StudentsRepositoryContract& studentsRepository);
     void execute(bool needsParameter) override;
 };
 

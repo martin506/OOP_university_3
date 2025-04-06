@@ -1,179 +1,139 @@
 #include "abstract/students-data-sort-runner.h"
 
 StudentsDataSortRunner::StudentsDataSortRunner()
-    : inputManagerRepo(new InputManagerRepository()),
-      studentsRepo(new StudentsVectorRepository(inputManagerRepo)),
-      goodStudentsRepo(new StudentsVectorRepository(inputManagerRepo)),
-      badStudentsRepo(new StudentsVectorRepository(inputManagerRepo)),
-      printStudentsToFileService(new PrintStudentsToFileService(studentsRepo)),
-      printGoodStudentsToFileService(new PrintStudentsToFileService(goodStudentsRepo)),
-      printBadStudentsToFileService(new PrintStudentsToFileService(badStudentsRepo)),
-      createStudentsAutomaticallyService(new CreateStudentsAutomaticallyService(studentsRepo)),
-      generateStudentsByHandService(new GenerateStudentsByHandService(studentsRepo)),
-      generateStudentsToFileService(new GenerateStudentsToFileService()),
-      getUserInputService(new GetUserInputService(inputManagerRepo)),
-      printStudentsToConsoleService(new PrintStudentsToConsoleService(studentsRepo)),
-      saveStudentsDataFromFileService(new SaveStudentsDataFromFileService(studentsRepo)),
-      sortStudentsService(new SortStudentsService(studentsRepo)),
-      sortStudentsToBadAndGoodService(new SortStudentsToBadAndGoodService(goodStudentsRepo, badStudentsRepo, studentsRepo)),
-      sortStudentsToBadAndGoodServiceStrategy2(new SortStudentsToBadAndGoodServiceStrategy2(badStudentsRepo, studentsRepo)),
-      testsController(studentsRepo, generateStudentsToFileService, saveStudentsDataFromFileService, sortStudentsService, sortStudentsToBadAndGoodService, printGoodStudentsToFileService, printBadStudentsToFileService) {}
+    : inputManagerRepo(std::make_unique<InputManagerRepository>()),
+      studentsRepo(std::make_unique<StudentsVectorRepository>(*inputManagerRepo)),
+      goodStudentsRepo(std::make_unique<StudentsVectorRepository>(*inputManagerRepo)),
+      badStudentsRepo(std::make_unique<StudentsVectorRepository>(*inputManagerRepo)),
+      printStudentsToFileService(std::make_unique<PrintStudentsToFileService>(*studentsRepo)),
+      printGoodStudentsToFileService(std::make_unique<PrintStudentsToFileService>(*goodStudentsRepo)),
+      printBadStudentsToFileService(std::make_unique<PrintStudentsToFileService>(*badStudentsRepo)),
+      createStudentsAutomaticallyService(std::make_unique<CreateStudentsAutomaticallyService>(*studentsRepo)),
+      generateStudentsByHandService(std::make_unique<GenerateStudentsByHandService>(*studentsRepo)),
+      generateStudentsToFileService(std::make_unique<GenerateStudentsToFileService>()),
+      getUserInputService(std::make_unique<GetUserInputService>(*inputManagerRepo)),
+      printStudentsToConsoleService(std::make_unique<PrintStudentsToConsoleService>(*studentsRepo)),
+      saveStudentsDataFromFileService(std::make_unique<SaveStudentsDataFromFileService>(*studentsRepo)),
+      sortStudentsService(std::make_unique<SortStudentsService>(*studentsRepo)),
+      sortStudentsToBadAndGoodService(std::make_unique<SortStudentsToBadAndGoodService>(*goodStudentsRepo, *badStudentsRepo, *studentsRepo)),
+      sortStudentsToBadAndGoodServiceStrategy2(std::make_unique<SortStudentsToBadAndGoodServiceStrategy2>(*badStudentsRepo, *studentsRepo)),
+      testsController(std::make_unique<TestsController>(*studentsRepo, *generateStudentsToFileService, *saveStudentsDataFromFileService, *sortStudentsService, *sortStudentsToBadAndGoodService, *printGoodStudentsToFileService, *printBadStudentsToFileService)) {}
 
-void StudentsDataSortRunner::updateServices()
-{
-    delete printStudentsToFileService;
-    delete printGoodStudentsToFileService;
-    delete printBadStudentsToFileService;
-    delete createStudentsAutomaticallyService;
-    delete generateStudentsByHandService;
-    delete generateStudentsToFileService;
-    delete getUserInputService;
-    delete printStudentsToConsoleService;
-    delete saveStudentsDataFromFileService;
-    delete sortStudentsService;
-    delete sortStudentsToBadAndGoodService;
-    delete sortStudentsToBadAndGoodServiceStrategy2;
-
-    printStudentsToFileService = new PrintStudentsToFileService(studentsRepo);
-    printGoodStudentsToFileService = new PrintStudentsToFileService(goodStudentsRepo);
-    printBadStudentsToFileService = new PrintStudentsToFileService(badStudentsRepo);
-    createStudentsAutomaticallyService = new CreateStudentsAutomaticallyService(studentsRepo);
-    generateStudentsByHandService = new GenerateStudentsByHandService(studentsRepo);
-    generateStudentsToFileService = new GenerateStudentsToFileService();
-    getUserInputService = new GetUserInputService(inputManagerRepo);
-    printStudentsToConsoleService = new PrintStudentsToConsoleService(studentsRepo);
-    saveStudentsDataFromFileService = new SaveStudentsDataFromFileService(studentsRepo);
-    sortStudentsService = new SortStudentsService(studentsRepo);
-    sortStudentsToBadAndGoodService = new SortStudentsToBadAndGoodService(goodStudentsRepo, badStudentsRepo, studentsRepo);
-    sortStudentsToBadAndGoodServiceStrategy2 = new SortStudentsToBadAndGoodServiceStrategy2(badStudentsRepo, studentsRepo);
-    testsController = TestsController(studentsRepo, generateStudentsToFileService, saveStudentsDataFromFileService, sortStudentsService, sortStudentsToBadAndGoodService, printGoodStudentsToFileService, printBadStudentsToFileService);
+void StudentsDataSortRunner::updateServices() {
+    printStudentsToFileService = std::make_unique<PrintStudentsToFileService>(*studentsRepo);
+    printGoodStudentsToFileService = std::make_unique<PrintStudentsToFileService>(*goodStudentsRepo);
+    printBadStudentsToFileService = std::make_unique<PrintStudentsToFileService>(*badStudentsRepo);
+    createStudentsAutomaticallyService = std::make_unique<CreateStudentsAutomaticallyService>(*studentsRepo);
+    generateStudentsByHandService = std::make_unique<GenerateStudentsByHandService>(*studentsRepo);
+    generateStudentsToFileService = std::make_unique<GenerateStudentsToFileService>();
+    getUserInputService = std::make_unique<GetUserInputService>(*inputManagerRepo);
+    printStudentsToConsoleService = std::make_unique<PrintStudentsToConsoleService>(*studentsRepo);
+    saveStudentsDataFromFileService = std::make_unique<SaveStudentsDataFromFileService>(*studentsRepo);
+    sortStudentsService = std::make_unique<SortStudentsService>(*studentsRepo);
+    sortStudentsToBadAndGoodService = std::make_unique<SortStudentsToBadAndGoodService>(*goodStudentsRepo, *badStudentsRepo, *studentsRepo);
+    sortStudentsToBadAndGoodServiceStrategy2 = std::make_unique<SortStudentsToBadAndGoodServiceStrategy2>(*badStudentsRepo, *studentsRepo);
+    testsController = std::make_unique<TestsController>(*studentsRepo, *generateStudentsToFileService, *saveStudentsDataFromFileService, *sortStudentsService, *sortStudentsToBadAndGoodService, *printGoodStudentsToFileService, *printBadStudentsToFileService);
 }
 
-void StudentsDataSortRunner::useVectors()
-{
-    delete studentsRepo;
-    delete goodStudentsRepo;
-    delete badStudentsRepo;
-
-    studentsRepo = new StudentsVectorRepository(inputManagerRepo);
-    goodStudentsRepo = new StudentsVectorRepository(inputManagerRepo);
-    badStudentsRepo = new StudentsVectorRepository(inputManagerRepo);
-
+void StudentsDataSortRunner::useVectors() {
+    studentsRepo = std::make_unique<StudentsVectorRepository>(*inputManagerRepo);
+    goodStudentsRepo = std::make_unique<StudentsVectorRepository>(*inputManagerRepo);
+    badStudentsRepo = std::make_unique<StudentsVectorRepository>(*inputManagerRepo);
     updateServices();
 }
 
-void StudentsDataSortRunner::useLists()
-{
-    delete studentsRepo;
-    delete goodStudentsRepo;
-    delete badStudentsRepo;
-
-    studentsRepo = new StudentsListRepository(inputManagerRepo);
-    goodStudentsRepo = new StudentsListRepository(inputManagerRepo);
-    badStudentsRepo = new StudentsListRepository(inputManagerRepo);
-
+void StudentsDataSortRunner::useLists() {
+    studentsRepo = std::make_unique<StudentsListRepository>(*inputManagerRepo);
+    goodStudentsRepo = std::make_unique<StudentsListRepository>(*inputManagerRepo);
+    badStudentsRepo = std::make_unique<StudentsListRepository>(*inputManagerRepo);
     updateServices();
 }
 
-void StudentsDataSortRunner::useDeques()
-{
-    delete studentsRepo;
-    delete goodStudentsRepo;
-    delete badStudentsRepo;
-
-    studentsRepo = new StudentsDequeRepository(inputManagerRepo);
-    goodStudentsRepo = new StudentsDequeRepository(inputManagerRepo);
-    badStudentsRepo = new StudentsDequeRepository(inputManagerRepo);
-
+void StudentsDataSortRunner::useDeques() {
+    studentsRepo = std::make_unique<StudentsDequeRepository>(*inputManagerRepo);
+    goodStudentsRepo = std::make_unique<StudentsDequeRepository>(*inputManagerRepo);
+    badStudentsRepo = std::make_unique<StudentsDequeRepository>(*inputManagerRepo);
     updateServices();
 }
 
-void StudentsDataSortRunner::run()
-{
+void StudentsDataSortRunner::run() {
     getUserInputService->execute(false);
     InputManager inputManager = inputManagerRepo->getInputManager();
 
-    switch (inputManager.chosenContainerType)
-    {
-    case InputManager::DEQUE:
-        useDeques();
-        break;
-    case InputManager::VECTOR:
-        useVectors();
-        break;
-    case InputManager::LIST:
-        useLists();
-        break;
-    default:
-        throw std::invalid_argument("Invalid container type");
+    if (inputManager.isCreatingDataFiles) {
+        for (int i = 3; i < 7; i++) {
+            std::string studentId = "1" + std::string(i, '0');
+            generateStudentsToFileService->execute(studentId);
+        }
+        return;
+    }
+
+    switch (inputManager.chosenContainerType) {
+        case InputManager::DEQUE:
+            useDeques();
+            break;
+        case InputManager::VECTOR:
+            useVectors();
+            break;
+        case InputManager::LIST:
+            useLists();
+            break;
+        default:
+            throw std::invalid_argument("Invalid container type");
     }
 
     std::string filename = inputManager.getFileSize();
 
-    if (inputManager.isTestingMode)
-    {
-        // testsController.runGenerateFileDurationTest(filename);
-        testsController.runInputDurationTest(filename);
-        testsController.runModuleTest(filename);
+    if (inputManager.isTestingMode) {
+        testsController->runInputDurationTest(filename);
+        testsController->runModuleTest(filename);
         return;
     }
 
-    if (inputManager.isDataReadFromFile)
-    {
+    if (inputManager.isDataReadFromFile) {
         saveStudentsDataFromFileService->execute(filename);
-    }
-    else if (inputManager.isDataGeneratedAutomatically)
-    {
+    } else if (inputManager.isDataGeneratedAutomatically) {
         createStudentsAutomaticallyService->execute(1000);
-    }
-    else if (inputManager.isDefiningStudents)
-    {
+    } else if (inputManager.isDefiningStudents) {
         generateStudentsByHandService->execute(false);
-    }
-    else
-    {
+    } else {
         return;
     }
 
-    switch (inputManager.strategyChoice)
-    {
-    case InputManager::STRATEGY1:
-        sortStudentsToBadAndGoodService->execute(false);
-        break;
-    case InputManager::STRATEGY2:
-        sortStudentsToBadAndGoodServiceStrategy2->execute(false);
-        break;
-    default:
-        sortStudentsToBadAndGoodService->execute(false);
-        break;
+    switch (inputManager.strategyChoice) {
+        case InputManager::STRATEGY1:
+            sortStudentsToBadAndGoodService->execute(false);
+            break;
+        case InputManager::STRATEGY2:
+            sortStudentsToBadAndGoodServiceStrategy2->execute(false);
+            break;
+        default:
+            sortStudentsToBadAndGoodService->execute(false);
+            break;
     }
 
     sortStudentsService->execute(false);
 
     sortStudentsToBadAndGoodServiceStrategy2->execute(false);
 
-    if (inputManager.isPrintingDataToFile)
-    {
-        switch (inputManager.strategyChoice)
-        {
-        case InputManager::STRATEGY1:
-            printStudentsToFileService->execute("../text-files/output.txt");
-            printGoodStudentsToFileService->execute("../text-files/good-students.txt");
-            printBadStudentsToFileService->execute("../text-files/bad-students.txt");
-            break;
-        case InputManager::STRATEGY2:
-            printStudentsToFileService->execute("../text-files/good-students.txt");
-            printBadStudentsToFileService->execute("../text-files/bad-students.txt");
-            break;
-        default:
-            printStudentsToFileService->execute("../text-files/output.txt");
-            printGoodStudentsToFileService->execute("../text-files/good-students.txt");
-            printBadStudentsToFileService->execute("../text-files/bad-students.txt");
-            break;
+    if (inputManager.isPrintingDataToFile) {
+        switch (inputManager.strategyChoice) {
+            case InputManager::STRATEGY1:
+                printStudentsToFileService->execute("../text-files/output.txt");
+                printGoodStudentsToFileService->execute("../text-files/good-students.txt");
+                printBadStudentsToFileService->execute("../text-files/bad-students.txt");
+                break;
+            case InputManager::STRATEGY2:
+                printStudentsToFileService->execute("../text-files/good-students.txt");
+                printBadStudentsToFileService->execute("../text-files/bad-students.txt");
+                break;
+            default:
+                printStudentsToFileService->execute("../text-files/output.txt");
+                printGoodStudentsToFileService->execute("../text-files/good-students.txt");
+                printBadStudentsToFileService->execute("../text-files/bad-students.txt");
+                break;
         }
-    }
-    else
-    {
+    } else {
         printStudentsToConsoleService->execute(false);
     }
 

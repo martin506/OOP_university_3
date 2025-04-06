@@ -9,7 +9,7 @@
 
 class CreateStudentsAutomaticallyService : public CreateStudentsAutomaticallyUseCase {
 private:
-    StudentsRepositoryContract* studentsRepository;
+    StudentsRepositoryContract& studentsRepository;
 
     std::vector<std::string> names = {
         "John", "Jane", "Alice", "Bob", "Charlie", "Diana", "Edward", "Fiona", "George", "Hannah",
@@ -25,8 +25,8 @@ private:
     int getRandomGrade();
 
 public:
-    CreateStudentsAutomaticallyService(StudentsRepositoryContract* studentsRepository);
+    explicit CreateStudentsAutomaticallyService(StudentsRepositoryContract& studentsRepository);
     void execute(int numberOfStudents) override;
 };
 
-#endif 
+#endif

@@ -10,11 +10,11 @@
 class StudentsListRepository : public StudentsRepositoryContract {
 private:
     std::list<StudentWithGradesVector> students;
-    InputManagerRepositoryContract* inputManagerRepository;
+    InputManagerRepositoryContract& inputManagerRepository;
 
 public:
-    StudentsListRepository(InputManagerRepositoryContract* inputManagerRepository);
-    ~StudentsListRepository();
+    explicit StudentsListRepository(InputManagerRepositoryContract& inputManagerRepository);
+    ~StudentsListRepository() override = default;
 
     void save(StudentWithGradesVector studentWithGradesVector) override;
     StudentContainer getStudentWithGradesVector() override;
@@ -22,4 +22,4 @@ public:
     void clearData() override;
 };
 
-#endif 
+#endif

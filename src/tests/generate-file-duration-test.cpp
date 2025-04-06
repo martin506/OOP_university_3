@@ -3,7 +3,7 @@
 #include <fstream>
 #include <iostream>
 
-GenerateFileDurationTest::GenerateFileDurationTest(GenerateStudentsToFileUseCase* generateService)
+GenerateFileDurationTest::GenerateFileDurationTest(GenerateStudentsToFileUseCase& generateService)
     : generateService(generateService) {}
 
 void GenerateFileDurationTest::testGenerateFileDuration(const std::string& fileSize) {
@@ -11,7 +11,7 @@ void GenerateFileDurationTest::testGenerateFileDuration(const std::string& fileS
 
     for (int i = 0; i < 5; i++) {
         auto start = std::chrono::high_resolution_clock::now();
-        generateService->execute(fileSize);
+        generateService.execute(fileSize);
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = end - start;
 

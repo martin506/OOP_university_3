@@ -8,11 +8,11 @@
 class InputDurationTest
 {
 private:
-    StudentsRepositoryContract *studentsRepository;
-    SaveStudentsDataFromFileUseCase *saveService;
+    StudentsRepositoryContract &studentsRepository;
+    SaveStudentsDataFromFileUseCase &saveService;
 
 public:
-    InputDurationTest(StudentsRepositoryContract *studentsRepository, SaveStudentsDataFromFileUseCase *saveService);
+    InputDurationTest(StudentsRepositoryContract &studentsRepository, SaveStudentsDataFromFileUseCase &saveService);
     void testInputDuration(const std::string &fileName);
 };
 

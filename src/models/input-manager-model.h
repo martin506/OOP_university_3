@@ -27,6 +27,7 @@ struct InputManager {
     ContainerType chosenContainerType;
     StrategyChoice strategyChoice;
 
+    bool isCreatingDataFiles;
     bool isTestingMode;
     bool isDataReadFromFile;
     bool isDataGeneratedAutomatically;

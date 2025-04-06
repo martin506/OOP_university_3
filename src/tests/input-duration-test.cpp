@@ -3,7 +3,7 @@
 #include <fstream>
 #include <iostream>
 
-InputDurationTest::InputDurationTest(StudentsRepositoryContract* studentsRepository, SaveStudentsDataFromFileUseCase* saveService)
+InputDurationTest::InputDurationTest(StudentsRepositoryContract& studentsRepository, SaveStudentsDataFromFileUseCase& saveService)
     : studentsRepository(studentsRepository), saveService(saveService) {}
 
 void InputDurationTest::testInputDuration(const std::string& fileName) {
@@ -11,12 +11,12 @@ void InputDurationTest::testInputDuration(const std::string& fileName) {
 
     for (int i = 0; i < 5; i++) {
         auto start = std::chrono::high_resolution_clock::now();
-        saveService->execute(fileName);
+        saveService.execute(fileName);
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = end - start;
 
         sumTime += elapsed.count();
-        studentsRepository->clearData();
+        studentsRepository.clearData();
     }
 
     std::ofstream testsFile("../text-files/tests-results.txt", std::ios::app);

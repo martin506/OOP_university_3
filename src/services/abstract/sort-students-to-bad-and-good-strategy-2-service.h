@@ -7,11 +7,11 @@
 class SortStudentsToBadAndGoodServiceStrategy2 : public SortStudentsToBadAndGoodUseCase
 {
 private:
-    StudentsRepositoryContract *badStudentsRepository;
-    StudentsRepositoryContract *studentsRepository;
+    StudentsRepositoryContract &badStudentsRepository;
+    StudentsRepositoryContract &studentsRepository;
 
 public:
-    SortStudentsToBadAndGoodServiceStrategy2(StudentsRepositoryContract *badRepo, StudentsRepositoryContract *studentsRepository);
+    SortStudentsToBadAndGoodServiceStrategy2(StudentsRepositoryContract &badRepo, StudentsRepositoryContract &studentsRepository);
     void execute(bool needsParameter) override;
 };
 

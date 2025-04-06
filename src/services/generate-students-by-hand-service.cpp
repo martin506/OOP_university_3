@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdexcept>
 
-GenerateStudentsByHandService::GenerateStudentsByHandService(StudentsRepositoryContract* repo)
+GenerateStudentsByHandService::GenerateStudentsByHandService(StudentsRepositoryContract& repo)
     : studentsRepository(repo) {}
 
 void GenerateStudentsByHandService::execute(bool needsParameter) {
@@ -36,7 +36,7 @@ void GenerateStudentsByHandService::execute(bool needsParameter) {
         studentWithGrades.grades = grades;
         studentWithGrades.student = Student{name, surname, examGrade, studentWithGrades.calculateAverage(), studentWithGrades.calculateMedian()};
 
-        studentsRepository->save(studentWithGrades);
+        studentsRepository.save(studentWithGrades);
 
         std::cout << "Student data saved successfully." << std::endl;
     } catch (const std::exception& e) {

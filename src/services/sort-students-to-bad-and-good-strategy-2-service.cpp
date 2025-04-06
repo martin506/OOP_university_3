@@ -2,16 +2,16 @@
 #include <variant>
 #include <iostream>
 
-SortStudentsToBadAndGoodServiceStrategy2::SortStudentsToBadAndGoodServiceStrategy2(StudentsRepositoryContract* badRepo, StudentsRepositoryContract* studentsRepository)
+SortStudentsToBadAndGoodServiceStrategy2::SortStudentsToBadAndGoodServiceStrategy2(StudentsRepositoryContract& badRepo, StudentsRepositoryContract& studentsRepository)
     : badStudentsRepository(badRepo), studentsRepository(studentsRepository) {}
 
 void SortStudentsToBadAndGoodServiceStrategy2::execute(bool needsParameter) {
-    StudentContainer students = studentsRepository->getStudentWithGradesVector();
+    StudentContainer students = studentsRepository.getStudentWithGradesVector();
 
     std::visit([this](auto&& container) {
         auto it = std::remove_if(container.begin(), container.end(), [this](const auto& studentWithGrades) {
             if (studentWithGrades.student.finalGradeWithAverage < 5) {
-                badStudentsRepository->save(studentWithGrades);
+                badStudentsRepository.save(studentWithGrades);
                 return true;
             }
             return false;
@@ -19,11 +19,11 @@ void SortStudentsToBadAndGoodServiceStrategy2::execute(bool needsParameter) {
         container.erase(it, container.end());
     }, students);
 
-    studentsRepository->clearData();
+    studentsRepository.clearData();
 
     std::visit([this](auto&& container) {
         for (const auto& student : container) {
-            studentsRepository->save(student);
+            studentsRepository.save(student);
         }
     }, students);
 }

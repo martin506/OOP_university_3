@@ -1,6 +1,6 @@
 #include "abstract/print-students-to-file-service.h"
 
-PrintStudentsToFileService::PrintStudentsToFileService(StudentsRepositoryContract *repo)
+PrintStudentsToFileService::PrintStudentsToFileService(StudentsRepositoryContract &repo)
     : studentsRepository(repo) {}
 
 void PrintStudentsToFileService::execute(std::string fileName)
@@ -19,7 +19,7 @@ void PrintStudentsToFileService::execute(std::string fileName)
                    << std::left << std::setw(15) << "Avg Grade"
                    << std::left << std::setw(15) << "Med Grade" << "\n";
 
-        StudentContainer students = studentsRepository->getStudentWithGradesVector();
+        StudentContainer students = studentsRepository.getStudentWithGradesVector();
 
         std::visit([&outputFile](auto &&container)
             {

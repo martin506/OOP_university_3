@@ -6,15 +6,14 @@
 #include <vector>
 #include <algorithm>
 
-class StudentsVectorRepository : public StudentsRepositoryContract
-{
+class StudentsVectorRepository : public StudentsRepositoryContract {
 private:
     std::vector<StudentWithGradesVector> students;
-    InputManagerRepositoryContract* inputManagerRepositoryRepository;
+    InputManagerRepositoryContract& inputManagerRepository;
 
 public:
-    StudentsVectorRepository(InputManagerRepositoryContract* inputManagerRepositoryRepository);
-    ~StudentsVectorRepository();
+    explicit StudentsVectorRepository(InputManagerRepositoryContract& inputManagerRepository);
+    ~StudentsVectorRepository() override = default;
 
     void save(StudentWithGradesVector studentWithGradesVector) override;
     StudentContainer getStudentWithGradesVector() override;
@@ -22,4 +21,4 @@ public:
     void clearData() override;
 };
 
-#endif 
+#endif

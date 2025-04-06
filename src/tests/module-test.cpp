@@ -4,11 +4,11 @@
 #include <iostream>
 
 ModuleTest::ModuleTest(
-    SaveStudentsDataFromFileUseCase* saveService,
-    SortStudentsUseCase* sortService,
-    SortStudentsToBadAndGoodUseCase* sortToBadAndGoodService,
-    PrintStudentsToFileUseCase* printGoodStudentsService,
-    PrintStudentsToFileUseCase* printBadStudentsService
+    SaveStudentsDataFromFileUseCase& saveService,
+    SortStudentsUseCase& sortService,
+    SortStudentsToBadAndGoodUseCase& sortToBadAndGoodService,
+    PrintStudentsToFileUseCase& printGoodStudentsService,
+    PrintStudentsToFileUseCase& printBadStudentsService
 ) : saveService(saveService), sortService(sortService), sortToBadAndGoodService(sortToBadAndGoodService), printGoodStudentsService(printGoodStudentsService), printBadStudentsService(printBadStudentsService) {}
 
 void ModuleTest::testModule(const std::string& filename) {
@@ -20,29 +20,29 @@ void ModuleTest::testModule(const std::string& filename) {
 
     for (int i = 0; i < 5; i++) {
         auto start = std::chrono::high_resolution_clock::now();
-        saveService->execute(filename);
+        saveService.execute(filename);
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = end - start;
         readStudentsFromFileTime += elapsed.count();
         wholeProgramSumTime += elapsed.count();
 
         start = std::chrono::high_resolution_clock::now();
-        sortService->execute(false);
+        sortService.execute(false);
         end = std::chrono::high_resolution_clock::now();
         elapsed = end - start;
         sortStudentsTime += elapsed.count();
         wholeProgramSumTime += elapsed.count();
 
         start = std::chrono::high_resolution_clock::now();
-        sortToBadAndGoodService->execute(false);
+        sortToBadAndGoodService.execute(false);
         end = std::chrono::high_resolution_clock::now();
         elapsed = end - start;
         sortStudentsToBadAndGoodTime += elapsed.count();
         wholeProgramSumTime += elapsed.count();
 
         start = std::chrono::high_resolution_clock::now();
-        printGoodStudentsService->execute("good-students.txt");
-        printBadStudentsService->execute("bad-students.txt");
+        printGoodStudentsService.execute("good-students.txt");
+        printBadStudentsService.execute("bad-students.txt");
         end = std::chrono::high_resolution_clock::now();
         elapsed = end - start;
         outputGoodAndBadStudentsTime += elapsed.count();

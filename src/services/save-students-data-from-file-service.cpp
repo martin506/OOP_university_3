@@ -1,6 +1,6 @@
 #include "abstract/save-students-data-from-file-service.h"
 
-SaveStudentsDataFromFileService::SaveStudentsDataFromFileService(StudentsRepositoryContract* repo)
+SaveStudentsDataFromFileService::SaveStudentsDataFromFileService(StudentsRepositoryContract& repo)
     : studentsRepository(repo) {}
 
 void SaveStudentsDataFromFileService::execute(std::string filename) {
@@ -39,7 +39,7 @@ void SaveStudentsDataFromFileService::execute(std::string filename) {
 
             Student student = Student(name, surname, examGrade, studentWithGrades.calculateAverage(), studentWithGrades.calculateMedian());
             studentWithGrades.student = student;
-            studentsRepository->save(studentWithGrades);
+            studentsRepository.save(studentWithGrades);
         }
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;

@@ -10,10 +10,10 @@
 
 class PrintStudentsToFileService : public PrintStudentsToFileUseCase {
 private:
-    StudentsRepositoryContract* studentsRepository;
+    StudentsRepositoryContract& studentsRepository;
 
 public:
-    PrintStudentsToFileService(StudentsRepositoryContract* repo);
+    PrintStudentsToFileService(StudentsRepositoryContract& repo);
     void execute(std::string fileName) override;
 };
 

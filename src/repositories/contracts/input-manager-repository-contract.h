@@ -8,6 +8,7 @@ private:
     InputManager inputManager;
 
 public:
+    virtual ~InputManagerRepositoryContract() = default;
     virtual InputManager getInputManager() = 0;
     virtual void setInputManager(InputManager updatedInputManager) = 0;
 };

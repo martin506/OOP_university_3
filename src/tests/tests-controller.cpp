@@ -1,13 +1,13 @@
 #include "abstract/tests-controller.h"
 
 TestsController::TestsController(
-    StudentsRepositoryContract* studentsRepo,
-    GenerateStudentsToFileUseCase* generateService,
-    SaveStudentsDataFromFileUseCase* saveService,
-    SortStudentsUseCase* sortService,
-    SortStudentsToBadAndGoodUseCase* sortToBadAndGoodService,
-    PrintStudentsToFileUseCase* printGoodStudentsService,
-    PrintStudentsToFileUseCase* printBadStudentsService
+    StudentsRepositoryContract& studentsRepo,
+    GenerateStudentsToFileUseCase& generateService,
+    SaveStudentsDataFromFileUseCase& saveService,
+    SortStudentsUseCase& sortService,
+    SortStudentsToBadAndGoodUseCase& sortToBadAndGoodService,
+    PrintStudentsToFileUseCase& printGoodStudentsService,
+    PrintStudentsToFileUseCase& printBadStudentsService
 ) : generateFileDurationTest(generateService),
     moduleTest(saveService, sortService, sortToBadAndGoodService, printGoodStudentsService, printBadStudentsService),
     inputDurationTest(studentsRepo, saveService),
