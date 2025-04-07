@@ -39,10 +39,7 @@ private:
     std::string fileSize;
 
 public:
-    InputManager()
-        : sortingChoice(SURNAME), chosenContainerType(VECTOR), strategyChoice(STRATEGY1),
-          isCreatingDataFiles(false), isTestingMode(false), isDataReadFromFile(false),
-          isDataGeneratedAutomatically(false), isDefiningStudents(false), isPrintingDataToFile(false) {}
+    InputManager();
 
     inline SortingChoice getSortingChoice() const { return sortingChoice; }
     inline void setSortingChoice(SortingChoice choice) { sortingChoice = choice; }
@@ -54,8 +51,8 @@ public:
     inline void setIsCreatingDataFiles(bool value) { isCreatingDataFiles = value; }
     inline bool getIsTestingMode() const { return isTestingMode; }
     inline void setIsTestingMode(bool value) { isTestingMode = value; }
-    inline bool getIsDataReadFromFile() const { return isDataReadFromFile; } 
-    inline void setIsDataReadFromFile(bool value) { isDataReadFromFile = value; } 
+    inline bool getIsDataReadFromFile() const { return isDataReadFromFile; }
+    inline void setIsDataReadFromFile(bool value) { isDataReadFromFile = value; }
     inline bool getIsDataGeneratedAutomatically() const { return isDataGeneratedAutomatically; }
     inline void setIsDataGeneratedAutomatically(bool value) { isDataGeneratedAutomatically = value; }
     inline bool getIsDefiningStudents() const { return isDefiningStudents; }
@@ -63,18 +60,8 @@ public:
     inline bool getIsPrintingDataToFile() const { return isPrintingDataToFile; }
     inline void setIsPrintingDataToFile(bool value) { isPrintingDataToFile = value; }
 
-    bool setFileSize(const std::string& size) {
-        static const std::set<std::string> viableSizes = {"1000", "10000", "100000", "1000000", "10000000"};
-        if (viableSizes.find(size) != viableSizes.end()) {
-            fileSize = size;
-            return true;
-        }
-        return false;
-    }
-
-    std::string getFileSize() const {
-        return fileSize;
-    }
+    bool setFileSize(const std::string& size);
+    std::string getFileSize() const;
 };
 
 #endif
