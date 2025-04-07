@@ -4,7 +4,8 @@
 #include <string>
 #include <set>
 
-struct InputManager {
+class InputManager {
+public:
     enum SortingChoice {
         SURNAME,
         NAME,
@@ -23,6 +24,7 @@ struct InputManager {
         STRATEGY2
     };
 
+private:
     SortingChoice sortingChoice;
     ContainerType chosenContainerType;
     StrategyChoice strategyChoice;
@@ -33,6 +35,86 @@ struct InputManager {
     bool isDataGeneratedAutomatically;
     bool isDefiningStudents;
     bool isPrintingDataToFile;
+
+    std::string fileSize;
+
+public:
+    InputManager()
+        : sortingChoice(SURNAME), chosenContainerType(VECTOR), strategyChoice(STRATEGY1),
+          isCreatingDataFiles(false), isTestingMode(false), isDataReadFromFile(false),
+          isDataGeneratedAutomatically(false), isDefiningStudents(false), isPrintingDataToFile(false) {}
+
+    SortingChoice getSortingChoice() const {
+        return sortingChoice;
+    }
+
+    void setSortingChoice(SortingChoice choice) {
+        sortingChoice = choice;
+    }
+
+    ContainerType getChosenContainerType() const {
+        return chosenContainerType;
+    }
+
+    void setChosenContainerType(ContainerType type) {
+        chosenContainerType = type;
+    }
+
+    StrategyChoice getStrategyChoice() const {
+        return strategyChoice;
+    }
+
+    void setStrategyChoice(StrategyChoice choice) {
+        strategyChoice = choice;
+    }
+
+    bool getIsCreatingDataFiles() const {
+        return isCreatingDataFiles;
+    }
+
+    void setIsCreatingDataFiles(bool value) {
+        isCreatingDataFiles = value;
+    }
+
+    bool getIsTestingMode() const {
+        return isTestingMode;
+    }
+
+    void setIsTestingMode(bool value) {
+        isTestingMode = value;
+    }
+
+    bool getIsDataReadFromFile() const {
+        return isDataReadFromFile;
+    }
+
+    void setIsDataReadFromFile(bool value) {
+        isDataReadFromFile = value;
+    }
+
+    bool getIsDataGeneratedAutomatically() const {
+        return isDataGeneratedAutomatically;
+    }
+
+    void setIsDataGeneratedAutomatically(bool value) {
+        isDataGeneratedAutomatically = value;
+    }
+
+    bool getIsDefiningStudents() const {
+        return isDefiningStudents;
+    }
+
+    void setIsDefiningStudents(bool value) {
+        isDefiningStudents = value;
+    }
+
+    bool getIsPrintingDataToFile() const {
+        return isPrintingDataToFile;
+    }
+
+    void setIsPrintingDataToFile(bool value) {
+        isPrintingDataToFile = value;
+    }
 
     bool setFileSize(const std::string& size) {
         static const std::set<std::string> viableSizes = {"1000", "10000", "100000", "1000000", "10000000"};
@@ -46,9 +128,6 @@ struct InputManager {
     std::string getFileSize() const {
         return fileSize;
     }
-
-private:
-    std::string fileSize;
 };
 
 #endif
