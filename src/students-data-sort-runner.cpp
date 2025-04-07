@@ -60,7 +60,7 @@ void StudentsDataSortRunner::run() {
     getUserInputService->execute(false);
     InputManager inputManager = inputManagerRepo->getInputManager();
 
-    if (inputManager.isCreatingDataFiles) {
+    if (inputManager.getIsCreatingDataFiles()) {
         for (int i = 3; i < 7; i++) {
             std::string studentId = "1" + std::string(i, '0');
             generateStudentsToFileService->execute(studentId);
@@ -68,7 +68,7 @@ void StudentsDataSortRunner::run() {
         return;
     }
 
-    switch (inputManager.chosenContainerType) {
+    switch (inputManager.getChosenContainerType()) {
         case InputManager::DEQUE:
             useDeques();
             break;
@@ -84,23 +84,23 @@ void StudentsDataSortRunner::run() {
 
     std::string filename = inputManager.getFileSize();
 
-    if (inputManager.isTestingMode) {
+    if (inputManager.getIsTestingMode()) {
         testsController->runInputDurationTest(filename);
         testsController->runModuleTest(filename);
         return;
     }
 
-    if (inputManager.isDataReadFromFile) {
+    if (inputManager.getIsDataReadFromFile()) {
         saveStudentsDataFromFileService->execute(filename);
-    } else if (inputManager.isDataGeneratedAutomatically) {
+    } else if (inputManager.getIsDataGeneratedAutomatically()) {
         createStudentsAutomaticallyService->execute(1000);
-    } else if (inputManager.isDefiningStudents) {
+    } else if (inputManager.getIsDefiningStudents()) {
         generateStudentsByHandService->execute(false);
     } else {
         return;
     }
 
-    switch (inputManager.strategyChoice) {
+    switch (inputManager.getStrategyChoice()) {
         case InputManager::STRATEGY1:
             sortStudentsToBadAndGoodService->execute(false);
             break;
@@ -116,8 +116,8 @@ void StudentsDataSortRunner::run() {
 
     sortStudentsToBadAndGoodServiceStrategy2->execute(false);
 
-    if (inputManager.isPrintingDataToFile) {
-        switch (inputManager.strategyChoice) {
+    if (inputManager.getIsPrintingDataToFile()) {
+        switch (inputManager.getStrategyChoice()) {
             case InputManager::STRATEGY1:
                 printStudentsToFileService->execute("../text-files/output.txt");
                 printGoodStudentsToFileService->execute("../text-files/good-students.txt");
