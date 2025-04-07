@@ -9,7 +9,7 @@ void SortStudentsToBadAndGoodService::execute(bool needsParameter) {
 
     std::visit([this](auto&& container) {
         for (const auto& student : container) {
-            if (student.student.isFinalGradeWithAveragePassing()) {
+            if (student.getStudent().isFinalGradeWithAveragePassing()) {
                 goodStudentsRepository.save(student);
             } else {
                 badStudentsRepository.save(student);

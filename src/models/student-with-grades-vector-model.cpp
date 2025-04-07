@@ -9,6 +9,10 @@ void StudentWithGradesVector::addGrade(int grade) {
     grades.push_back(grade);
 }
 
+void StudentWithGradesVector::removeLastGrade() {
+    grades.pop_back();
+}
+
 double StudentWithGradesVector::calculateAverage() const {
     if (grades.empty()) return 0.0;
     double sum = std::accumulate(grades.begin(), grades.end(), 0);

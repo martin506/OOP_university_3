@@ -21,6 +21,7 @@ public:
     inline void setGrades(const std::vector<int>& newGrades) { grades = newGrades; }
 
     void addGrade(int grade);
+    void removeLastGrade();
     double calculateAverage() const;
     double calculateMedian() const;
 };

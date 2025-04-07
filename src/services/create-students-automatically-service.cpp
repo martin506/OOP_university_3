@@ -30,8 +30,8 @@ void CreateStudentsAutomaticallyService::execute(int numberOfStudents) {
             int examGrade = getRandomGrade();
     
             StudentWithGradesVector studentWithGrades;
-            studentWithGrades.grades = grades;
-            studentWithGrades.student = Student{name, surname, examGrade, studentWithGrades.calculateAverage(), studentWithGrades.calculateMedian()};
+            studentWithGrades.setGrades(grades);
+            studentWithGrades.setStudent(Student{name, surname, examGrade, studentWithGrades.calculateAverage(), studentWithGrades.calculateMedian()});
     
             studentsRepository.save(studentWithGrades);
         }

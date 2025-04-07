@@ -29,16 +29,16 @@ void SaveStudentsDataFromFileService::execute(std::string filename) {
             lineStream >> name >> surname;
             int grade;
             while (lineStream >> grade) {
-                studentWithGrades.grades.push_back(grade);
+                studentWithGrades.addGrade(grade);
             }
 
-            if (!studentWithGrades.grades.empty()) {
-                examGrade = studentWithGrades.grades.back();
-                studentWithGrades.grades.pop_back();
+            if (!studentWithGrades.getGrades().empty()) {
+                examGrade = studentWithGrades.getGrades().back();
+                studentWithGrades.removeLastGrade();
             }
 
             Student student = Student(name, surname, examGrade, studentWithGrades.calculateAverage(), studentWithGrades.calculateMedian());
-            studentWithGrades.student = student;
+            studentWithGrades.setStudent(student);
             studentsRepository.save(studentWithGrades);
         }
     } catch (const std::exception& e) {

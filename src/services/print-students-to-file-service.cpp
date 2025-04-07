@@ -24,11 +24,11 @@ void PrintStudentsToFileService::execute(std::string fileName)
         std::visit([&outputFile](auto &&container)
             {
                 for (const auto& studentWithGrades : container) {
-                    outputFile << std::left << std::setw(20) << studentWithGrades.student.name
-                                << std::left << std::setw(20) << studentWithGrades.student.surname
-                                << std::left << std::setw(10) << studentWithGrades.student.examGrade
-                                << std::left << std::setw(15) << studentWithGrades.student.finalGradeWithAverage
-                                << std::left << std::setw(15) << studentWithGrades.student.finalGradeWithMedian << "\n";
+                    outputFile << std::left << std::setw(20) << studentWithGrades.getStudent().getName()
+                                << std::left << std::setw(20) << studentWithGrades.getStudent().getSurname()
+                                << std::left << std::setw(10) << studentWithGrades.getStudent().getExamGrade()
+                                << std::left << std::setw(15) << studentWithGrades.getStudent().getFinalGradeWithAverage()
+                                << std::left << std::setw(15) << studentWithGrades.getStudent().getFinalGradeWithMedian() << "\n";
                 } }, students);
 
         outputFile.close();

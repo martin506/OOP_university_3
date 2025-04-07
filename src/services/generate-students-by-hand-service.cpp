@@ -33,8 +33,8 @@ void GenerateStudentsByHandService::execute(bool needsParameter) {
         grades.pop_back();
 
         StudentWithGradesVector studentWithGrades;
-        studentWithGrades.grades = grades;
-        studentWithGrades.student = Student{name, surname, examGrade, studentWithGrades.calculateAverage(), studentWithGrades.calculateMedian()};
+        studentWithGrades.setGrades(grades);
+        studentWithGrades.setStudent(Student{name, surname, examGrade, studentWithGrades.calculateAverage(), studentWithGrades.calculateMedian()});
 
         studentsRepository.save(studentWithGrades);
 
