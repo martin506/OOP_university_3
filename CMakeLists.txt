@@ -8,7 +8,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
 include_directories(
     common
     src/abstract
-    src/models
+    src/models/abstract
     src/repositories/abstract
     src/repositories/contracts
     src/services/abstract
@@ -19,6 +19,9 @@ include_directories(
 # Source files
 set(SOURCES
     src/main.cpp
+    src/models/input-manager-model.cpp
+    src/models/student-model.cpp
+    src/models/student-with-grades-vector-model.cpp
     src/students-data-sort-runner.cpp
     src/repositories/input-manager-repository.cpp
     src/repositories/students-vector-repository.cpp

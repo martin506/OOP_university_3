@@ -10,7 +10,7 @@ void SortStudentsToBadAndGoodServiceStrategy2::execute(bool needsParameter) {
 
     std::visit([this](auto&& container) {
         auto it = std::remove_if(container.begin(), container.end(), [this](const auto& studentWithGrades) {
-            if (studentWithGrades.student.finalGradeWithAverage < 5) {
+            if (studentWithGrades.getStudent().getFinalGradeWithAverage() < 5) {
                 badStudentsRepository.save(studentWithGrades);
                 return true;
             }
