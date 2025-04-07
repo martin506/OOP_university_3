@@ -12,37 +12,17 @@ private:
     std::vector<int> grades;
 
 public:
-    StudentWithGradesVector() = default;
-
-    StudentWithGradesVector(const Student& student, const std::vector<int>& grades)
-        : student(student), grades(grades) {}
+    StudentWithGradesVector();
+    StudentWithGradesVector(const Student& student, const std::vector<int>& grades);
 
     inline const Student& getStudent() const { return student; }
     inline void setStudent(const Student& newStudent) { student = newStudent; }
     inline const std::vector<int>& getGrades() const { return grades; }
     inline void setGrades(const std::vector<int>& newGrades) { grades = newGrades; }
-    
-    void addGrade(int grade) {
-        grades.push_back(grade);
-    }
 
-    double calculateAverage() const {
-        if (grades.empty()) return 0.0;
-        double sum = std::accumulate(grades.begin(), grades.end(), 0);
-        return sum / grades.size();
-    }
-
-    double calculateMedian() const {
-        if (grades.empty()) return 0.0;
-        std::vector<int> sortedGrades = grades;
-        std::sort(sortedGrades.begin(), sortedGrades.end());
-        size_t size = sortedGrades.size();
-        if (size % 2 == 0) {
-            return (sortedGrades[size / 2 - 1] + sortedGrades[size / 2]) / 2.0;
-        } else {
-            return sortedGrades[size / 2];
-        }
-    }
+    void addGrade(int grade);
+    double calculateAverage() const;
+    double calculateMedian() const;
 };
 
 #endif
