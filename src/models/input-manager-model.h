@@ -44,77 +44,24 @@ public:
           isCreatingDataFiles(false), isTestingMode(false), isDataReadFromFile(false),
           isDataGeneratedAutomatically(false), isDefiningStudents(false), isPrintingDataToFile(false) {}
 
-    SortingChoice getSortingChoice() const {
-        return sortingChoice;
-    }
-
-    void setSortingChoice(SortingChoice choice) {
-        sortingChoice = choice;
-    }
-
-    ContainerType getChosenContainerType() const {
-        return chosenContainerType;
-    }
-
-    void setChosenContainerType(ContainerType type) {
-        chosenContainerType = type;
-    }
-
-    StrategyChoice getStrategyChoice() const {
-        return strategyChoice;
-    }
-
-    void setStrategyChoice(StrategyChoice choice) {
-        strategyChoice = choice;
-    }
-
-    bool getIsCreatingDataFiles() const {
-        return isCreatingDataFiles;
-    }
-
-    void setIsCreatingDataFiles(bool value) {
-        isCreatingDataFiles = value;
-    }
-
-    bool getIsTestingMode() const {
-        return isTestingMode;
-    }
-
-    void setIsTestingMode(bool value) {
-        isTestingMode = value;
-    }
-
-    bool getIsDataReadFromFile() const {
-        return isDataReadFromFile;
-    }
-
-    void setIsDataReadFromFile(bool value) {
-        isDataReadFromFile = value;
-    }
-
-    bool getIsDataGeneratedAutomatically() const {
-        return isDataGeneratedAutomatically;
-    }
-
-    void setIsDataGeneratedAutomatically(bool value) {
-        isDataGeneratedAutomatically = value;
-    }
-
-    bool getIsDefiningStudents() const {
-        return isDefiningStudents;
-    }
-
-    void setIsDefiningStudents(bool value) {
-        isDefiningStudents = value;
-    }
-
-    bool getIsPrintingDataToFile() const {
-        return isPrintingDataToFile;
-    }
-
-    void setIsPrintingDataToFile(bool value) {
-        isPrintingDataToFile = value;
-    }
+    inline SortingChoice getSortingChoice() const { return sortingChoice; }
+    inline void setSortingChoice(SortingChoice choice) { sortingChoice = choice; }
+    inline ContainerType getChosenContainerType() const { return chosenContainerType; }
+    inline void setChosenContainerType(ContainerType type) { chosenContainerType = type; }
+    inline StrategyChoice getStrategyChoice() const { return strategyChoice; }
+    inline void setStrategyChoice(StrategyChoice choice) { strategyChoice = choice; }
+    inline bool getIsCreatingDataFiles() const { return isCreatingDataFiles; }
+    inline void setIsCreatingDataFiles(bool value) { isCreatingDataFiles = value; }
+    inline bool getIsTestingMode() const { return isTestingMode; }
+    inline void setIsTestingMode(bool value) { isTestingMode = value; }
+    inline bool getIsDataReadFromFile() const { return isDataReadFromFile; } 
+    inline void setIsDataReadFromFile(bool value) { isDataReadFromFile = value; } 
+    inline bool getIsDataGeneratedAutomatically() const { return isDataGeneratedAutomatically; }
+    inline void setIsDataGeneratedAutomatically(bool value) { isDataGeneratedAutomatically = value; }
+    inline bool getIsDefiningStudents() const { return isDefiningStudents; }
+    inline void setIsDefiningStudents(bool value) { isDefiningStudents = value; }
+    inline bool getIsPrintingDataToFile() const { return isPrintingDataToFile; }
+    inline void setIsPrintingDataToFile(bool value) { isPrintingDataToFile = value; }
 
     bool setFileSize(const std::string& size) {
         static const std::set<std::string> viableSizes = {"1000", "10000", "100000", "1000000", "10000000"};

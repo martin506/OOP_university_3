@@ -17,22 +17,11 @@ public:
     StudentWithGradesVector(const Student& student, const std::vector<int>& grades)
         : student(student), grades(grades) {}
 
-    const Student& getStudent() const {
-        return student;
-    }
-
-    void setStudent(const Student& newStudent) {
-        student = newStudent;
-    }
-
-    const std::vector<int>& getGrades() const {
-        return grades;
-    }
-
-    void setGrades(const std::vector<int>& newGrades) {
-        grades = newGrades;
-    }
-
+    inline const Student& getStudent() const { return student; }
+    inline void setStudent(const Student& newStudent) { student = newStudent; }
+    inline const std::vector<int>& getGrades() const { return grades; }
+    inline void setGrades(const std::vector<int>& newGrades) { grades = newGrades; }
+    
     void addGrade(int grade) {
         grades.push_back(grade);
     }

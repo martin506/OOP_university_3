@@ -18,45 +18,16 @@ public:
     Student(const std::string& name, const std::string& surname, int examGrade, double finalGradeWithAverage, double finalGradeWithMedian)
         : name(name), surname(surname), examGrade(examGrade), finalGradeWithAverage(finalGradeWithAverage), finalGradeWithMedian(finalGradeWithMedian) {}
 
-    std::string getName() const {
-        return name;
-    }
-
-    void setName(const std::string& newName) {
-        name = newName;
-    }
-
-    std::string getSurname() const {
-        return surname;
-    }
-
-    void setSurname(const std::string& newSurname) {
-        surname = newSurname;
-    }
-
-    int getExamGrade() const {
-        return examGrade;
-    }
-
-    void setExamGrade(int newExamGrade) {
-        examGrade = newExamGrade;
-    }
-
-    double getFinalGradeWithAverage() const {
-        return finalGradeWithAverage;
-    }
-
-    void setFinalGradeWithAverage(double newFinalGradeWithAverage) {
-        finalGradeWithAverage = newFinalGradeWithAverage;
-    }
-
-    double getFinalGradeWithMedian() const {
-        return finalGradeWithMedian;
-    }
-
-    void setFinalGradeWithMedian(double newFinalGradeWithMedian) {
-        finalGradeWithMedian = newFinalGradeWithMedian;
-    }
+    inline std::string getName() const { return name; }
+    inline void setName(const std::string& newName) { name = newName; }
+    inline std::string getSurname() const { return surname; }
+    inline void setSurname(const std::string& newSurname) { surname = newSurname; }
+    inline int getExamGrade() const { return examGrade; }
+    inline void setExamGrade(int newExamGrade) { examGrade = newExamGrade; }
+    inline double getFinalGradeWithAverage() const { return finalGradeWithAverage; }
+    inline void setFinalGradeWithAverage(double newFinalGradeWithAverage) { finalGradeWithAverage = newFinalGradeWithAverage; }
+    inline double getFinalGradeWithMedian() const { return finalGradeWithMedian; }
+    inline void setFinalGradeWithMedian(double newFinalGradeWithMedian) { finalGradeWithMedian = newFinalGradeWithMedian; }
 
     bool isFinalGradeWithAveragePassing() const {
         return finalGradeWithAverage >= 5;
