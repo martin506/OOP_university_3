@@ -113,3 +113,37 @@ Time to run the whole program average: 11.6247 seconds
 ssd: 500 GB
 ram: 32 GB
 cpu: 2.6GHz 6‑core Intel Core i7, Turbo Boost up to 4.5GHz, with 12MB shared L3 cache
+
+# Using class in domain classes vs using structs (vectors), improvements for everything
+Average time taken for input: 2.79964 seconds
+Time to read students from file average: 2.9401 seconds
+Time to sort students average: 0.104097 seconds
+Time to sort students to good and bad average: 0.903261 seconds
+Time to output students to file average: 6.33954 seconds
+Time to run the whole program average: 10.287 seconds
+
+
+# Using classes for models and choosing different flags
+- O1 flag
+Average time taken for input: 2.91498 seconds
+Time to read students from file average: 3.02424 seconds
+Time to sort students average: 0.150708 seconds
+Time to sort students to good and bad average: 0.934526 seconds
+Time to output students to file average: 6.28459 seconds
+Time to run the whole program average: 10.3941 seconds
+
+- O2 flag
+Average time taken for input: 2.71766 seconds
+Time to read students from file average: 2.81495 seconds
+Time to sort students average: 0.144442 seconds
+Time to sort students to good and bad average: 0.927887 seconds
+Time to output students to file average: 6.28983 seconds
+Time to run the whole program average: 10.1771 seconds
+
+- O3 flag
+Average time taken for input: 2.79964 seconds
+Time to read students from file average: 2.9401 seconds
+Time to sort students average: 0.104097 seconds
+Time to sort students to good and bad average: 0.903261 seconds
+Time to output students to file average: 6.33954 seconds
+Time to run the whole program average: 10.287 seconds
