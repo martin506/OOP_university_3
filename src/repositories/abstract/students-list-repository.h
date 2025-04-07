@@ -3,7 +3,7 @@
 
 #include "../contracts/students-repository-contract.h"
 #include "../contracts/input-manager-repository-contract.h"
-#include "../../models/student-with-grades-vector-model.h"
+#include "../../models/abstract/student-with-grades-vector-model.h"
 #include <list>
 #include <stdexcept>
 

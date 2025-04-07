@@ -1,7 +1,7 @@
 #ifndef STUDENTS_VECTOR_REPOSITORY_CONTRACT_H
 #define STUDENTS_VECTOR_REPOSITORY_CONTRACT_H
 
-#include "../../models/student-with-grades-vector-model.h"
+#include "../../models/abstract/student-with-grades-vector-model.h"
 #include <vector>
 #include <list>
 #include <deque>

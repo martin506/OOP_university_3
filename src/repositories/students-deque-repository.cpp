@@ -16,23 +16,23 @@ StudentContainer StudentsDequeRepository::getStudentWithGradesVector()
 void StudentsDequeRepository::sortData()
 {
     InputManager inputManager = inputManagerRepository.getInputManager();
-    switch (inputManager.sortingChoice)
+    switch (inputManager.getSortingChoice())
     {
     case InputManager::SURNAME:
         std::sort(students.begin(), students.end(), [](const StudentWithGradesVector &a, const StudentWithGradesVector &b)
-                  { return a.student.surname < b.student.surname; });
+                  { return a.getStudent().getSurname() < b.getStudent().getSurname(); });
         break;
     case InputManager::NAME:
         std::sort(students.begin(), students.end(), [](const StudentWithGradesVector &a, const StudentWithGradesVector &b)
-                  { return a.student.name < b.student.name; });
+                  { return a.getStudent().getName() < b.getStudent().getName(); });
         break;
     case InputManager::FINAL_GRADE_WITH_AVERAGE:
         std::sort(students.begin(), students.end(), [](const StudentWithGradesVector &a, const StudentWithGradesVector &b)
-                  { return a.student.finalGradeWithAverage < b.student.finalGradeWithAverage; });
+                  { return a.getStudent().getFinalGradeWithAverage() < b.getStudent().getFinalGradeWithAverage(); });
         break;
     case InputManager::FINAL_GRADE_WITH_MEDIAN:
         std::sort(students.begin(), students.end(), [](const StudentWithGradesVector &a, const StudentWithGradesVector &b)
-                  { return a.student.finalGradeWithMedian < b.student.finalGradeWithMedian; });
+                  { return a.getStudent().getFinalGradeWithMedian() < b.getStudent().getFinalGradeWithMedian(); });
         break;
     default:
         throw std::invalid_argument("Invalid sorting choice");

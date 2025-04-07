@@ -1,7 +1,7 @@
 #ifndef INPUT_MANAGER_REPOSITORY_CONTRACT_H
 #define INPUT_MANAGER_REPOSITORY_CONTRACT_H
 
-#include "../../models/input-manager-model.h"
+#include "../../models/abstract/input-manager-model.h"
 
 class InputManagerRepositoryContract {
 private:
