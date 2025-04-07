@@ -12,11 +12,8 @@ private:
     double finalGradeWithMedian;
 
 public:
-    Student()
-        : name("name"), surname("surname"), examGrade(10), finalGradeWithAverage(0), finalGradeWithMedian(0) {}
-
-    Student(const std::string& name, const std::string& surname, int examGrade, double finalGradeWithAverage, double finalGradeWithMedian)
-        : name(name), surname(surname), examGrade(examGrade), finalGradeWithAverage(finalGradeWithAverage), finalGradeWithMedian(finalGradeWithMedian) {}
+    Student();
+    Student(const std::string& name, const std::string& surname, int examGrade, double finalGradeWithAverage, double finalGradeWithMedian);
 
     inline std::string getName() const { return name; }
     inline void setName(const std::string& newName) { name = newName; }
@@ -29,13 +26,8 @@ public:
     inline double getFinalGradeWithMedian() const { return finalGradeWithMedian; }
     inline void setFinalGradeWithMedian(double newFinalGradeWithMedian) { finalGradeWithMedian = newFinalGradeWithMedian; }
 
-    bool isFinalGradeWithAveragePassing() const {
-        return finalGradeWithAverage >= 5;
-    }
-
-    bool isFinalGradeWithMedianPassing() const {
-        return finalGradeWithMedian >= 5;
-    }
+    bool isFinalGradeWithAveragePassing() const;
+    bool isFinalGradeWithMedianPassing() const;
 };
 
 #endif
