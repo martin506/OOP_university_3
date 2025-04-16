@@ -5,6 +5,7 @@
 #include <vector>
 #include <algorithm>
 #include <numeric>
+#include <iostream>
 
 class StudentWithGradesVector {
 private:

@@ -100,6 +100,8 @@ void StudentsDataSortRunner::run() {
         return;
     }
 
+    sortStudentsService->execute(false);
+
     switch (inputManager.getStrategyChoice()) {
         case InputManager::STRATEGY1:
             sortStudentsToBadAndGoodService->execute(false);
@@ -111,10 +113,6 @@ void StudentsDataSortRunner::run() {
             sortStudentsToBadAndGoodService->execute(false);
             break;
     }
-
-    sortStudentsService->execute(false);
-
-    sortStudentsToBadAndGoodServiceStrategy2->execute(false);
 
     if (inputManager.getIsPrintingDataToFile()) {
         switch (inputManager.getStrategyChoice()) {

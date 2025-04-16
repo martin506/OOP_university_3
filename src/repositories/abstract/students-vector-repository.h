@@ -5,6 +5,7 @@
 #include "../contracts/input-manager-repository-contract.h"
 #include <vector>
 #include <algorithm>
+#include <iostream>
 
 class StudentsVectorRepository : public StudentsRepositoryContract {
 private:

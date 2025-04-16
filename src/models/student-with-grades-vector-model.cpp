@@ -20,7 +20,7 @@ void StudentWithGradesVector::removeLastGrade() {
 double StudentWithGradesVector::calculateAverage() const {
     if (grades.empty()) return 0.0;
     double sum = std::accumulate(grades.begin(), grades.end(), 0);
-    return ( ( sum / grades.size() ) * 0.4f + 0.6f * student.getExamGrade()) ;
+    return ( ( sum / grades.size() ) * 0.4 + 0.6 * student.getExamGrade()) ;
 }
 
 double StudentWithGradesVector::calculateMedian() const {
@@ -29,8 +29,8 @@ double StudentWithGradesVector::calculateMedian() const {
     std::sort(sortedGrades.begin(), sortedGrades.end());
     size_t size = sortedGrades.size();
     if (size % 2 == 0) {
-        return ((sortedGrades[size / 2 - 1] + sortedGrades[size / 2]) / 2.0 * 0.4f + 0.6f * student.getExamGrade());
+        return ((sortedGrades[size / 2 - 1] + sortedGrades[size / 2]) / 2.0 * 0.4 + 0.6 * student.getExamGrade());
     } else {
-        return (sortedGrades[size / 2] * 0.4f + 0.6f * student.getExamGrade());
+        return (sortedGrades[size / 2] * 0.4 + 0.6 * student.getExamGrade());
     }
 }

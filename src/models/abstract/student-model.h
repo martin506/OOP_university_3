@@ -20,7 +20,7 @@ public:
     inline std::string getSurname() const { return surname; }
     inline void setSurname(const std::string& newSurname) { surname = newSurname; }
     inline int getExamGrade() const { return examGrade; }
-    inline void setExamGrade(int newExamGrade) { examGrade = newExamGrade; }
+    inline void setExamGrade(int& newExamGrade) { examGrade = newExamGrade; }
     inline double getFinalGradeWithAverage() const { return finalGradeWithAverage; }
     inline void setFinalGradeWithAverage(double newFinalGradeWithAverage) { finalGradeWithAverage = newFinalGradeWithAverage; }
     inline double getFinalGradeWithMedian() const { return finalGradeWithMedian; }
