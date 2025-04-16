@@ -5,6 +5,10 @@ StudentWithGradesVector::StudentWithGradesVector() = default;
 StudentWithGradesVector::StudentWithGradesVector(const Student& student, const std::vector<int>& grades)
     : student(student), grades(grades) {}
 
+StudentWithGradesVector::~StudentWithGradesVector() {
+    grades.clear();
+}
+
 void StudentWithGradesVector::addGrade(int grade) {
     grades.push_back(grade);
 }

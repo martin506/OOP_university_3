@@ -14,6 +14,7 @@ private:
 public:
     StudentWithGradesVector();
     StudentWithGradesVector(const Student& student, const std::vector<int>& grades);
+    ~StudentWithGradesVector();
 
     inline const Student& getStudent() const { return student; }
     inline void setStudent(const Student& newStudent) { student = newStudent; }
