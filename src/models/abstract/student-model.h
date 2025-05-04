@@ -6,7 +6,8 @@
 #include <algorithm>
 #include <numeric>
 
-class Student {
+class Student
+{
 private:
     std::string name;
     std::string surname;
@@ -18,12 +19,17 @@ private:
 public:
     Student();
     ~Student();
-    Student(const std::string& name, const std::string& surname, int examGrade, double finalGradeWithAverage, double finalGradeWithMedian);
+    Student(const std::string &name, const std::string &surname, int examGrade, double finalGradeWithAverage, double finalGradeWithMedian);
+
+    Student(const Student &other);                // Copy Constructor
+    Student &operator=(const Student &other);     // Copy Assignment Operator
+    Student(Student &&other) noexcept;            // Move Constructor
+    Student &operator=(Student &&other) noexcept; // Move Assignment Operator
 
     inline std::string getName() const { return name; }
-    inline void setName(const std::string& newName) { name = newName; }
+    inline void setName(const std::string &newName) { name = newName; }
     inline std::string getSurname() const { return surname; }
-    inline void setSurname(const std::string& newSurname) { surname = newSurname; }
+    inline void setSurname(const std::string &newSurname) { surname = newSurname; }
     inline int getExamGrade() const { return examGrade; }
     inline void setExamGrade(int newExamGrade) { examGrade = newExamGrade; }
     inline double getFinalGradeWithAverage() const { return finalGradeWithAverage; }
@@ -31,8 +37,8 @@ public:
     inline double getFinalGradeWithMedian() const { return finalGradeWithMedian; }
     inline void setFinalGradeWithMedian(double newFinalGradeWithMedian) { finalGradeWithMedian = newFinalGradeWithMedian; }
 
-    inline const std::vector<int>& getGrades() const { return grades; }
-    inline void setGrades(const std::vector<int>& newGrades) { grades = newGrades; }
+    inline const std::vector<int> &getGrades() const { return grades; }
+    inline void setGrades(const std::vector<int> &newGrades) { grades = newGrades; }
 
     void addGrade(int grade);
     void removeLastGrade();
