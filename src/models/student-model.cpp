@@ -23,7 +23,7 @@ Student::Student(const Student& other)
 
 // Copy Assignment Operator
 Student& Student::operator=(const Student& other) {
-    if (this == &other) return *this; // Handle self-assignment
+    if (this == &other) return *this;
     name = other.name;
     surname = other.surname;
     examGrade = other.examGrade;
@@ -39,6 +39,20 @@ Student::Student(Student&& other) noexcept
       finalGradeWithAverage(other.finalGradeWithAverage), finalGradeWithMedian(other.finalGradeWithMedian),
       grades(std::move(other.grades)) {
     other.~Student();
+}
+
+// Move Assignment Operator
+Student& Student::operator=(Student&& other) noexcept {
+    if (this == &other) return *this;
+    name = std::move(other.name);
+    surname = std::move(other.surname);
+    examGrade = other.examGrade;
+    finalGradeWithAverage = other.finalGradeWithAverage;
+    finalGradeWithMedian = other.finalGradeWithMedian;
+    grades = std::move(other.grades);
+
+    other.~Student();
+    return *this;
 }
 
 void Student::addGrade(int grade) {
