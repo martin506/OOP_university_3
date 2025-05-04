@@ -55,6 +55,48 @@ Student& Student::operator=(Student&& other) noexcept {
     return *this;
 }
 
+// Output Operator
+std::ostream& operator<<(std::ostream& out, const Student& stud) {
+    out << std::setw(15) << "Name: " << stud.name << "\n"
+        << std::setw(15) << "Surname: " << stud.surname << "\n"
+        << std::setw(15) << "Exam Grade: " << stud.examGrade << "\n"
+        << std::setw(15) << "Final Grade (Avg): " << stud.finalGradeWithAverage << "\n"
+        << std::setw(15) << "Final Grade (Med): " << stud.finalGradeWithMedian << "\n"
+        << std::setw(15) << "Grades: ";
+    for (const auto& grade : stud.grades) {
+        out << grade << " ";
+    }
+    out << "\n";
+    return out;
+}
+
+// Input Operator
+std::istream& operator>>(std::istream& in, Student& stud) {
+    std::cout << "Enter Name: ";
+    in >> stud.name;
+    std::cout << "Enter Surname: ";
+    in >> stud.surname;
+
+    stud.grades.clear();
+    std::cout << "Enter Grades (end with -1, last grade will be treated as Exam Grade): ";
+    int grade;
+    while (in >> grade && grade != -1) {
+        stud.grades.push_back(grade);
+    }
+
+    if (!stud.grades.empty()) {
+        stud.examGrade = stud.grades.back();
+        stud.grades.pop_back();
+    } else {
+        stud.examGrade = 0;
+    }
+
+    stud.finalGradeWithAverage = stud.calculateAverage();
+    stud.finalGradeWithMedian = stud.calculateMedian();
+
+    return in;
+}
+
 void Student::addGrade(int grade) {
     grades.push_back(grade);
 }

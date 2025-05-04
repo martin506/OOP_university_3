@@ -5,6 +5,9 @@
 #include <vector>
 #include <algorithm>
 #include <numeric>
+#include <ostream>
+#include <iostream>
+#include <fstream>
 
 class Student
 {
@@ -25,6 +28,9 @@ public:
     Student &operator=(const Student &other);     // Copy Assignment Operator
     Student(Student &&other) noexcept;            // Move Constructor
     Student &operator=(Student &&other) noexcept; // Move Assignment Operator
+
+    friend std::ostream& operator<<(std::ostream &out, const Student &stud);
+    friend std::istream& operator>>(std::istream &in, Student &stud);
 
     inline std::string getName() const { return name; }
     inline void setName(const std::string &newName) { name = newName; }

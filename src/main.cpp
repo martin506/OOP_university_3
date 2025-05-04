@@ -2,6 +2,8 @@
 
 int main() {
     StudentsDataSortRunner runner;
-    runner.run();
+    //runner.run();
+
+    
     return 0;
 }
