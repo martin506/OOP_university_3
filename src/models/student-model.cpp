@@ -21,6 +21,18 @@ Student::Student(const Student& other)
       finalGradeWithAverage(other.finalGradeWithAverage), finalGradeWithMedian(other.finalGradeWithMedian),
       grades(other.grades) {}
 
+// Copy Assignment Operator
+Student& Student::operator=(const Student& other) {
+    if (this == &other) return *this; // Handle self-assignment
+    name = other.name;
+    surname = other.surname;
+    examGrade = other.examGrade;
+    finalGradeWithAverage = other.finalGradeWithAverage;
+    finalGradeWithMedian = other.finalGradeWithMedian;
+    grades = other.grades;
+    return *this;
+}
+
 void Student::addGrade(int grade) {
     grades.push_back(grade);
 }
