@@ -33,6 +33,14 @@ Student& Student::operator=(const Student& other) {
     return *this;
 }
 
+// Move Constructor
+Student::Student(Student&& other) noexcept
+    : name(std::move(other.name)), surname(std::move(other.surname)), examGrade(other.examGrade),
+      finalGradeWithAverage(other.finalGradeWithAverage), finalGradeWithMedian(other.finalGradeWithMedian),
+      grades(std::move(other.grades)) {
+    other.~Student();
+}
+
 void Student::addGrade(int grade) {
     grades.push_back(grade);
 }
