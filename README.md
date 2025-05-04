@@ -1,149 +1,161 @@
-# OOP_university
-OOP task from university
+# OOP University
 
-Input time
-test time for 10000 students: 0.16832
-test time for 100000 students: 2.12442
-test time for 1000000 students: 10.4156
+This project is an **Object-Oriented Programming (OOP)** task from university. It involves working with large datasets of students, performing operations such as input, sorting, and output, while comparing the performance of different container types and optimization flags.
 
-Students generating time
-test time for 1000 students: 0.00222296
-test time for 10000 students: 0.0159993
-test time for 100000 students: 0.13162
-test time for 1000000 students: 1.03391
-test time for 10000000 students: 10.1767
+---
 
-Average time for performance:
+## Performance Metrics
 
-Used file: text_files/students1000.txt
-average time taken for input: 0.00389589
-time to read students from file average: 0.00402327
-time to sort students average : 0.543587
-time to sort students to good and bad average: 0.000694392
-time to output students to file average: 0.00561752
-time to run the whole program average: 0.553922
+### Input Time
+- **10000 students**: `0.16832 seconds`
+- **100000 students**: `2.12442 seconds`
+- **1000000 students**: `10.4156 seconds`
 
-Used file: text_files/students10000.txt
-average time taken for input: 0.0281103
-time to read students from file average: 0.0304661
-time to sort students average : 0.746183
-time to sort students to good and bad average: 0.00717633
-time to output students to file average: 0.040584
-time to run the whole program average: 0.824409
+### Students Generating Time
+- **1000 students**: `0.00222296 seconds`
+- **10000 students**: `0.0159993 seconds`
+- **100000 students**: `0.13162 seconds`
+- **1000000 students**: `1.03391 seconds`
+- **10000000 students**: `10.1767 seconds`
 
-Used file: text_files/students100000.txt
-average time taken for input: 0.252412
-time to read students from file average: 0.260217
-time to sort students average : 1.50441
-time to sort students to good and bad average: 0.0595954
-time to output students to file average: 0.339719
-time to run the whole program average: 2.16395
+---
 
-Used file: text_files/students1000000.txt
-average time taken for input: 2.57021
-time to read students from file average: 2.63337
-time to sort students average : 2.23651
-time to sort students to good and bad average: 0.459325
-time to output students to file average: 3.31194
-time to run the whole program average: 8.64114
+## Average Time for Performance
 
-Used file: text_files/students10000000.txt
-average time taken for input: 27.3473
-time to read students from file average: 28.0419
-time to sort students average : 7.5584
-time to sort students to good and bad average: 11.6985
-time to output students to file average: 40.683
-time to run the whole program average: 87.9818
+### Using Different Input Files
+#### File: `text_files/students1000.txt`
+- **Input Time**: `0.00389589 seconds`
+- **Read Time**: `0.00402327 seconds`
+- **Sort Time**: `0.543587 seconds`
+- **Sort to Good and Bad Time**: `0.000694392 seconds`
+- **Output Time**: `0.00561752 seconds`
+- **Total Time**: `0.553922 seconds`
 
-# different container types
-testing with 1000000 students
+#### File: `text_files/students10000.txt`
+- **Input Time**: `0.0281103 seconds`
+- **Read Time**: `0.0304661 seconds`
+- **Sort Time**: `0.746183 seconds`
+- **Sort to Good and Bad Time**: `0.00717633 seconds`
+- **Output Time**: `0.040584 seconds`
+- **Total Time**: `0.824409 seconds`
 
-- deque
-Average time taken for input: 2.83357 seconds
-Time to read students from file average: 2.88493 seconds
-Time to sort students average: 0.157718 seconds
-Time to sort students to good and bad average: 1.09067 seconds
-Time to output students to file average: 6.45212 seconds
-Time to run the whole program average: 10.5854 seconds
+#### File: `text_files/students100000.txt`
+- **Input Time**: `0.252412 seconds`
+- **Read Time**: `0.260217 seconds`
+- **Sort Time**: `1.50441 seconds`
+- **Sort to Good and Bad Time**: `0.0595954 seconds`
+- **Output Time**: `0.339719 seconds`
+- **Total Time**: `2.16395 seconds`
 
-- list
-Average time taken for input: 2.87507 seconds
-Time to read students from file average: 2.87963 seconds
-Time to sort students average: 2.75329 seconds
-Time to sort students to good and bad average: 1.89583 seconds
-Time to output students to file average: 7.03756 seconds
-Time to run the whole program average: 14.5663 seconds
+#### File: `text_files/students1000000.txt`
+- **Input Time**: `2.57021 seconds`
+- **Read Time**: `2.63337 seconds`
+- **Sort Time**: `2.23651 seconds`
+- **Sort to Good and Bad Time**: `0.459325 seconds`
+- **Output Time**: `3.31194 seconds`
+- **Total Time**: `8.64114 seconds`
 
-- vector
-Average time taken for input: 2.86478 seconds
-Time to read students from file average: 2.99218 seconds
-Time to sort students average: 0.166391 seconds
-Time to sort students to good and bad average: 1.36359 seconds
-Time to output students to file average: 6.29514 seconds
-Time to run the whole program average: 10.8173 seconds
+#### File: `text_files/students10000000.txt`
+- **Input Time**: `27.3473 seconds`
+- **Read Time**: `28.0419 seconds`
+- **Sort Time**: `7.5584 seconds`
+- **Sort to Good and Bad Time**: `11.6985 seconds`
+- **Output Time**: `40.683 seconds`
+- **Total Time**: `87.9818 seconds`
 
-# different container types and using second sorting to good and bad strategy
+---
 
-- deque
-Average time taken for input: 3.41568 seconds
-Time to read students from file average: 3.36255 seconds
-Time to sort students average: 0.178233 seconds
-Time to sort students to good and bad average: 1.09387 seconds
-Time to output students to file average: 7.07835 seconds
-Time to run the whole program average: 11.713 seconds
+## Performance with Different Container Types
 
-- list
-Average time taken for input: 3.02607 seconds
-Time to read students from file average: 3.16613 seconds
-Time to sort students average: 2.80693 seconds
-Time to sort students to good and bad average: 1.76607 seconds
-Time to output students to file average: 7.28067 seconds
-Time to run the whole program average: 15.0198 seconds
+### Testing with 1,000,000 Students
 
-- vector
-Average time taken for input: 2.98935 seconds
-Time to read students from file average: 3.30657 seconds
-Time to sort students average: 0.1754 seconds
-Time to sort students to good and bad average: 1.39922 seconds
-Time to output students to file average: 6.74352 seconds
-Time to run the whole program average: 11.6247 seconds
+#### Deque
+- **Input Time**: `2.83357 seconds`
+- **Read Time**: `2.88493 seconds`
+- **Sort Time**: `0.157718 seconds`
+- **Sort to Good and Bad Time**: `1.09067 seconds`
+- **Output Time**: `6.45212 seconds`
+- **Total Time**: `10.5854 seconds`
 
+#### List
+- **Input Time**: `2.87507 seconds`
+- **Read Time**: `2.87963 seconds`
+- **Sort Time**: `2.75329 seconds`
+- **Sort to Good and Bad Time**: `1.89583 seconds`
+- **Output Time**: `7.03756 seconds`
+- **Total Time**: `14.5663 seconds`
 
-# specs
-ssd: 500 GB
-ram: 32 GB
-cpu: 2.6GHz 6‑core Intel Core i7, Turbo Boost up to 4.5GHz, with 12MB shared L3 cache
+#### Vector
+- **Input Time**: `2.86478 seconds`
+- **Read Time**: `2.99218 seconds`
+- **Sort Time**: `0.166391 seconds`
+- **Sort to Good and Bad Time**: `1.36359 seconds`
+- **Output Time**: `6.29514 seconds`
+- **Total Time**: `10.8173 seconds`
 
-# Using class in domain classes vs using structs (vectors), improvements for everything
-Average time taken for input: 2.79964 seconds
-Time to read students from file average: 2.9401 seconds
-Time to sort students average: 0.104097 seconds
-Time to sort students to good and bad average: 0.903261 seconds
-Time to output students to file average: 6.33954 seconds
-Time to run the whole program average: 10.287 seconds
+---
 
+## Performance with Different Sorting Strategies
 
-# Using classes for models and choosing different flags
-- O1 flag
-Average time taken for input: 2.91498 seconds
-Time to read students from file average: 3.02424 seconds
-Time to sort students average: 0.150708 seconds
-Time to sort students to good and bad average: 0.934526 seconds
-Time to output students to file average: 6.28459 seconds
-Time to run the whole program average: 10.3941 seconds
+### Testing with 1,000,000 Students
 
-- O2 flag
-Average time taken for input: 2.71766 seconds
-Time to read students from file average: 2.81495 seconds
-Time to sort students average: 0.144442 seconds
-Time to sort students to good and bad average: 0.927887 seconds
-Time to output students to file average: 6.28983 seconds
-Time to run the whole program average: 10.1771 seconds
+#### Deque
+- **Input Time**: `3.41568 seconds`
+- **Read Time**: `3.36255 seconds`
+- **Sort Time**: `0.178233 seconds`
+- **Sort to Good and Bad Time**: `1.09387 seconds`
+- **Output Time**: `7.07835 seconds`
+- **Total Time**: `11.713 seconds`
 
-- O3 flag
-Average time taken for input: 2.79964 seconds
-Time to read students from file average: 2.9401 seconds
-Time to sort students average: 0.104097 seconds
-Time to sort students to good and bad average: 0.903261 seconds
-Time to output students to file average: 6.33954 seconds
-Time to run the whole program average: 10.287 seconds
+#### List
+- **Input Time**: `3.02607 seconds`
+- **Read Time**: `3.16613 seconds`
+- **Sort Time**: `2.80693 seconds`
+- **Sort to Good and Bad Time**: `1.76607 seconds`
+- **Output Time**: `7.28067 seconds`
+- **Total Time**: `15.0198 seconds`
+
+#### Vector
+- **Input Time**: `2.98935 seconds`
+- **Read Time**: `3.30657 seconds`
+- **Sort Time**: `0.1754 seconds`
+- **Sort to Good and Bad Time**: `1.39922 seconds`
+- **Output Time**: `6.74352 seconds`
+- **Total Time**: `11.6247 seconds`
+
+---
+
+## Optimization Flags
+
+### Using Classes for Models and Choosing Different Flags
+
+#### O1 Flag
+- **Input Time**: `2.91498 seconds`
+- **Read Time**: `3.02424 seconds`
+- **Sort Time**: `0.150708 seconds`
+- **Sort to Good and Bad Time**: `0.934526 seconds`
+- **Output Time**: `6.28459 seconds`
+- **Total Time**: `10.3941 seconds`
+
+#### O2 Flag
+- **Input Time**: `2.71766 seconds`
+- **Read Time**: `2.81495 seconds`
+- **Sort Time**: `0.144442 seconds`
+- **Sort to Good and Bad Time**: `0.927887 seconds`
+- **Output Time**: `6.28983 seconds`
+- **Total Time**: `10.1771 seconds`
+
+#### O3 Flag
+- **Input Time**: `2.79964 seconds`
+- **Read Time**: `2.9401 seconds`
+- **Sort Time**: `0.104097 seconds`
+- **Sort to Good and Bad Time**: `0.903261 seconds`
+- **Output Time**: `6.33954 seconds`
+- **Total Time**: `10.287 seconds`
+
+---
+
+## System Specifications
+- **SSD**: 500 GB
+- **RAM**: 32 GB
+- **CPU**: 2.6GHz 6‑core Intel Core i7, Turbo Boost up to 4.5GHz, with 12MB shared L3 cache

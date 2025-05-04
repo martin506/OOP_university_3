@@ -2,7 +2,7 @@
 #define SORT_STUDENTS_TO_BAD_AND_GOOD_CONTRACT_H
 
 #include "../../../common/usecase-common.h"
-#include "../../models/abstract/student-with-grades-vector-model.h"
+#include "../../models/abstract/student-model.h"
 
 class SortStudentsToBadAndGoodUseCase : UseCase<bool, void> {
 public:

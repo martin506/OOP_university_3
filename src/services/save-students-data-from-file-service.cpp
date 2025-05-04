@@ -21,7 +21,7 @@ void SaveStudentsDataFromFileService::execute(std::string filename) {
 
         while (std::getline(buffer, line)) {
             std::istringstream lineStream(line);
-            StudentWithGradesVector studentWithGrades;
+            Student student;
 
             std::string name, surname;
             int examGrade;
@@ -29,23 +29,20 @@ void SaveStudentsDataFromFileService::execute(std::string filename) {
             lineStream >> name >> surname;
             int grade;
             while (lineStream >> grade) {
-                studentWithGrades.addGrade(grade);
+                student.addGrade(grade);
             }
 
-            if (!studentWithGrades.getGrades().empty()) {
-                examGrade = studentWithGrades.getGrades().back();
-                studentWithGrades.removeLastGrade();
+            if (!student.getGrades().empty()) {
+                examGrade = student.getGrades().back();
+                student.removeLastGrade();
             }
 
-            Student student;
             student.setName(name);
             student.setSurname(surname);
             student.setExamGrade(examGrade);
-            studentWithGrades.setStudent(student);
-            student.setFinalGradeWithAverage(studentWithGrades.calculateAverage());
-            student.setFinalGradeWithMedian(studentWithGrades.calculateMedian());
-            studentWithGrades.setStudent(student);
-            studentsRepository.save(studentWithGrades);
+            student.setFinalGradeWithAverage(student.calculateAverage());
+            student.setFinalGradeWithMedian(student.calculateMedian());
+            studentsRepository.save(student);
         }
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;

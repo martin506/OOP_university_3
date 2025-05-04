@@ -3,7 +3,7 @@
 StudentsVectorRepository::StudentsVectorRepository(InputManagerRepositoryContract &inputManagerRepository)
     : inputManagerRepository(inputManagerRepository) {}
 
-void StudentsVectorRepository::save(StudentWithGradesVector studentWithGradesVector)
+void StudentsVectorRepository::save(Student studentWithGradesVector)
 {
     students.push_back(std::move(studentWithGradesVector));
 }
@@ -19,20 +19,20 @@ void StudentsVectorRepository::sortData()
     switch (inputManager.getSortingChoice())
     {
     case InputManager::SURNAME:
-        std::sort(students.begin(), students.end(), [](const StudentWithGradesVector &a, const StudentWithGradesVector &b)
-                  { return a.getStudent().getSurname() < b.getStudent().getSurname(); });
+        std::sort(students.begin(), students.end(), [](const Student &a, const Student &b)
+                  { return a.getSurname() < b.getSurname(); });
         break;
     case InputManager::NAME:
-        std::sort(students.begin(), students.end(), [](const StudentWithGradesVector &a, const StudentWithGradesVector &b)
-                  { return a.getStudent().getName() < b.getStudent().getName(); });
+        std::sort(students.begin(), students.end(), [](const Student &a, const Student &b)
+                  { return a.getName() < b.getName(); });
         break;
     case InputManager::FINAL_GRADE_WITH_AVERAGE:
-        std::sort(students.begin(), students.end(), [](const StudentWithGradesVector &a, const StudentWithGradesVector &b)
-                  { return a.getStudent().getFinalGradeWithAverage() < b.getStudent().getFinalGradeWithAverage(); });
+        std::sort(students.begin(), students.end(), [](const Student &a, const Student &b)
+                  { return a.getFinalGradeWithAverage() < b.getFinalGradeWithAverage(); });
         break;
     case InputManager::FINAL_GRADE_WITH_MEDIAN:
-        std::sort(students.begin(), students.end(), [](const StudentWithGradesVector &a, const StudentWithGradesVector &b)
-                  { return a.getStudent().getFinalGradeWithMedian() < b.getStudent().getFinalGradeWithMedian(); });
+        std::sort(students.begin(), students.end(), [](const Student &a, const Student &b)
+                  { return a.getFinalGradeWithMedian() < b.getFinalGradeWithMedian(); });
         break;
     default:
         throw std::invalid_argument("Invalid sorting choice");

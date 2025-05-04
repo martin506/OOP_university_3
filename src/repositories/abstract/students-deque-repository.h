@@ -9,14 +9,14 @@
 
 class StudentsDequeRepository : public StudentsRepositoryContract {
 private:
-    std::deque<StudentWithGradesVector> students;
+    std::deque<Student> students;
     InputManagerRepositoryContract& inputManagerRepository; 
 
 public:
     explicit StudentsDequeRepository(InputManagerRepositoryContract& inputManagerRepository);
     ~StudentsDequeRepository() override = default;
 
-    void save(StudentWithGradesVector studentWithGradesVector) override;
+    void save(Student studentWithGradesVector) override;
     StudentContainer getStudentWithGradesVector() override;
     void sortData() override;
     void clearData() override;

@@ -17,12 +17,12 @@ void PrintStudentsToConsoleService::execute(bool needsParameter) {
         StudentContainer students = studentsRepository.getStudentWithGradesVector();
 
         std::visit([](auto&& container) {
-            for (const auto& studentWithGrades : container) {
-                std::cout << std::left << std::setw(20) << studentWithGrades.getStudent().getName()
-                          << std::left << std::setw(20) << studentWithGrades.getStudent().getSurname()
-                          << std::left << std::setw(10) << studentWithGrades.getStudent().getExamGrade()
-                          << std::left << std::setw(15) << studentWithGrades.getStudent().getFinalGradeWithAverage()
-                          << std::left << std::setw(15) << studentWithGrades.getStudent().getFinalGradeWithMedian() << "\n";
+            for (const auto& student : container) {
+                std::cout << std::left << std::setw(20) << student.getName()
+                          << std::left << std::setw(20) << student.getSurname()
+                          << std::left << std::setw(10) << student.getExamGrade()
+                          << std::left << std::setw(15) << student.getFinalGradeWithAverage()
+                          << std::left << std::setw(15) << student.getFinalGradeWithMedian() << "\n";
             }
         }, students);
 

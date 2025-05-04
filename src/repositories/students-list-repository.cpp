@@ -3,7 +3,7 @@
 StudentsListRepository::StudentsListRepository(InputManagerRepositoryContract& inputManagerRepository)
     : inputManagerRepository(inputManagerRepository) {}
 
-void StudentsListRepository::save(StudentWithGradesVector studentWithGradesVector) {
+void StudentsListRepository::save(Student studentWithGradesVector) {
     students.push_back(std::move(studentWithGradesVector));
 }
 
@@ -15,23 +15,23 @@ void StudentsListRepository::sortData() {
     InputManager inputManager = inputManagerRepository.getInputManager();
     switch (inputManager.getSortingChoice()) {
         case InputManager::SURNAME:
-            students.sort([](const StudentWithGradesVector& a, const StudentWithGradesVector& b) {
-                return a.getStudent().getSurname() < b.getStudent().getSurname();
+            students.sort([](const Student& a, const Student& b) {
+                return a.getSurname() < b.getSurname();
             });
             break;
         case InputManager::NAME:
-            students.sort([](const StudentWithGradesVector& a, const StudentWithGradesVector& b) {
-                return a.getStudent().getName() < b.getStudent().getName();
+            students.sort([](const Student& a, const Student& b) {
+                return a.getName() < b.getName();
             });
             break;
         case InputManager::FINAL_GRADE_WITH_AVERAGE:
-            students.sort([](const StudentWithGradesVector& a, const StudentWithGradesVector& b) {
-                return a.getStudent().getFinalGradeWithAverage() < b.getStudent().getFinalGradeWithAverage();
+            students.sort([](const Student& a, const Student& b) {
+                return a.getFinalGradeWithAverage() < b.getFinalGradeWithAverage();
             });
             break;
         case InputManager::FINAL_GRADE_WITH_MEDIAN:
-            students.sort([](const StudentWithGradesVector& a, const StudentWithGradesVector& b) {
-                return a.getStudent().getFinalGradeWithMedian() < b.getStudent().getFinalGradeWithMedian();
+            students.sort([](const Student& a, const Student& b) {
+                return a.getFinalGradeWithMedian() < b.getFinalGradeWithMedian();
             });
             break;
         default:

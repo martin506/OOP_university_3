@@ -3,20 +3,19 @@
 
 #include "../contracts/students-repository-contract.h"
 #include "../contracts/input-manager-repository-contract.h"
-#include "../../models/abstract/student-with-grades-vector-model.h"
 #include <list>
 #include <stdexcept>
 
 class StudentsListRepository : public StudentsRepositoryContract {
 private:
-    std::list<StudentWithGradesVector> students;
+    std::list<Student> students;
     InputManagerRepositoryContract& inputManagerRepository;
 
 public:
     explicit StudentsListRepository(InputManagerRepositoryContract& inputManagerRepository);
     ~StudentsListRepository() override = default;
 
-    void save(StudentWithGradesVector studentWithGradesVector) override;
+    void save(Student studentWithGradesVector) override;
     StudentContainer getStudentWithGradesVector() override;
     void sortData() override;
     void clearData() override;

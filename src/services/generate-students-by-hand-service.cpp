@@ -32,17 +32,12 @@ void GenerateStudentsByHandService::execute(bool needsParameter) {
         examGrade = grades.back();
         grades.pop_back();
 
-        StudentWithGradesVector studentWithGrades;
-        studentWithGrades.setGrades(grades);
-        Student student;
-        student.setName(name);
-        student.setSurname(surname);
-        student.setExamGrade(examGrade);
-        studentWithGrades.setStudent(student);
-        student.setFinalGradeWithAverage(studentWithGrades.calculateAverage());
-        student.setFinalGradeWithMedian(studentWithGrades.calculateMedian());
-        studentWithGrades.setStudent(student);
-        studentsRepository.save(studentWithGrades);
+        Student student = Student(name, surname, examGrade, 0, 0);
+        student.setGrades(grades);
+        student.setFinalGradeWithAverage(student.calculateAverage());
+        student.setFinalGradeWithMedian(student.calculateMedian());
+
+        studentsRepository.save(student);
 
         std::cout << "Student data saved successfully." << std::endl;
     } catch (const std::exception& e) {

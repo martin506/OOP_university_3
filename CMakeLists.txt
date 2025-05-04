@@ -21,7 +21,6 @@ set(SOURCES
     src/main.cpp
     src/models/input-manager-model.cpp
     src/models/student-model.cpp
-    src/models/student-with-grades-vector-model.cpp
     src/students-data-sort-runner.cpp
     src/repositories/input-manager-repository.cpp
     src/repositories/students-vector-repository.cpp

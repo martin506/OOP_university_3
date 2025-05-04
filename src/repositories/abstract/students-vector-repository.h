@@ -9,14 +9,14 @@
 
 class StudentsVectorRepository : public StudentsRepositoryContract {
 private:
-    std::vector<StudentWithGradesVector> students;
+    std::vector<Student> students;
     InputManagerRepositoryContract& inputManagerRepository;
 
 public:
     explicit StudentsVectorRepository(InputManagerRepositoryContract& inputManagerRepository);
     ~StudentsVectorRepository() override = default;
 
-    void save(StudentWithGradesVector studentWithGradesVector) override;
+    void save(Student studentWithGradesVector) override;
     StudentContainer getStudentWithGradesVector() override;
     void sortData() override;
     void clearData() override;
