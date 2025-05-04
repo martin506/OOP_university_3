@@ -4,11 +4,22 @@ Student::Student()
     : name("name"), surname("surname"), examGrade(8), finalGradeWithAverage(0), finalGradeWithMedian(0) {}
 
 Student::~Student() {
+    name = "";
+    surname = "";
+    examGrade = 0;
+    finalGradeWithAverage = 0;
+    finalGradeWithMedian = 0;
     grades.clear();
 }
 
 Student::Student(const std::string& name, const std::string& surname, int examGrade, double finalGradeWithAverage, double finalGradeWithMedian)
     : name(name), surname(surname), examGrade(examGrade), finalGradeWithAverage(finalGradeWithAverage), finalGradeWithMedian(finalGradeWithMedian) {}
+
+// Copy Constructor
+Student::Student(const Student& other)
+    : name(other.name), surname(other.surname), examGrade(other.examGrade),
+      finalGradeWithAverage(other.finalGradeWithAverage), finalGradeWithMedian(other.finalGradeWithMedian),
+      grades(other.grades) {}
 
 void Student::addGrade(int grade) {
     grades.push_back(grade);
