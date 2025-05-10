@@ -29,6 +29,7 @@ private:
     ContainerType chosenContainerType;
     StrategyChoice strategyChoice;
 
+    bool isTestingRuleOfFive;
     bool isCreatingDataFiles;
     bool isTestingMode;
     bool isDataReadFromFile;
@@ -47,6 +48,8 @@ public:
     inline void setChosenContainerType(ContainerType type) { chosenContainerType = type; }
     inline StrategyChoice getStrategyChoice() const { return strategyChoice; }
     inline void setStrategyChoice(StrategyChoice choice) { strategyChoice = choice; }
+    inline bool getIsTestingRuleOfFive() const { return isTestingRuleOfFive; }
+    inline void setIsTestingRuleOfFive(bool value) { isTestingRuleOfFive = value; }
     inline bool getIsCreatingDataFiles() const { return isCreatingDataFiles; }
     inline void setIsCreatingDataFiles(bool value) { isCreatingDataFiles = value; }
     inline bool getIsTestingMode() const { return isTestingMode; }

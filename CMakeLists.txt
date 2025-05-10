@@ -26,6 +26,7 @@ set(SOURCES
     src/repositories/students-vector-repository.cpp
     src/repositories/students-list-repository.cpp
     src/repositories/students-deque-repository.cpp
+    src/services/rule-of-five-test-service.cpp
     src/services/create-students-automatically-service.cpp
     src/services/generate-students-by-hand-service.cpp
     src/services/generate-students-to-file-service.cpp

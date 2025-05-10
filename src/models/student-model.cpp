@@ -57,12 +57,12 @@ Student& Student::operator=(Student&& other) noexcept {
 
 // Output Operator
 std::ostream& operator<<(std::ostream& out, const Student& stud) {
-    out << std::setw(15) << "Name: " << stud.name << "\n"
-        << std::setw(15) << "Surname: " << stud.surname << "\n"
-        << std::setw(15) << "Exam Grade: " << stud.examGrade << "\n"
-        << std::setw(15) << "Final Grade (Avg): " << stud.finalGradeWithAverage << "\n"
-        << std::setw(15) << "Final Grade (Med): " << stud.finalGradeWithMedian << "\n"
-        << std::setw(15) << "Grades: ";
+    out << std::setw(15) << std::left << "Name: " << stud.name << "\n"
+        << std::setw(15) << std::left << "Surname: " << stud.surname << "\n"
+        << std::setw(15) << std::left << "Exam Grade: " << stud.examGrade << "\n"
+        << std::setw(15) << std::left << "Final Grade (Avg): " << stud.finalGradeWithAverage << "\n"
+        << std::setw(15) << std::left << "Final Grade (Med): " << stud.finalGradeWithMedian << "\n"
+        << std::setw(15) << std::left << "Grades: ";
     for (const auto& grade : stud.grades) {
         out << grade << " ";
     }
