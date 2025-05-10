@@ -39,13 +39,13 @@ public:
     inline const std::vector<int>& getGrades() const { return grades; }
     inline void setGrades(const std::vector<int>& newGrades) { grades = newGrades; }
 
-    void addGrade(int grade);
-    void removeLastGrade();
-    double calculateAverage() const;
-    double calculateMedian() const;
+    void addGrade(int grade) override;
+    void removeLastGrade() override;
+    double calculateAverage() const override;
+    double calculateMedian() const override;
 
-    bool isFinalGradeWithAveragePassing() const;
-    bool isFinalGradeWithMedianPassing() const;
+    bool isFinalGradeWithAveragePassing() const override;
+    bool isFinalGradeWithMedianPassing() const override;
 };
 
 #endif

@@ -20,6 +20,7 @@ include_directories(
 set(SOURCES
     src/main.cpp
     src/models/input-manager-model.cpp
+    src/models/human-model.cpp
     src/models/student-model.cpp
     src/students-data-sort-runner.cpp
     src/repositories/input-manager-repository.cpp
