@@ -1,31 +1,22 @@
-#include "student-model.h"
+#include "abstract/student-model.h"
 
 Student::Student()
-    : name("name"), surname("surname"), examGrade(8), finalGradeWithAverage(0), finalGradeWithMedian(0) {}
+    : Human(), examGrade(8), finalGradeWithAverage(0), finalGradeWithMedian(0) {}
 
-Student::~Student() {
-    name = "";
-    surname = "";
-    examGrade = 0;
-    finalGradeWithAverage = 0;
-    finalGradeWithMedian = 0;
-    grades.clear();
-}
+Student::~Student() = default;
 
 Student::Student(const std::string& name, const std::string& surname, int examGrade, double finalGradeWithAverage, double finalGradeWithMedian)
-    : name(name), surname(surname), examGrade(examGrade), finalGradeWithAverage(finalGradeWithAverage), finalGradeWithMedian(finalGradeWithMedian) {}
+    : Human(name, surname), examGrade(examGrade), finalGradeWithAverage(finalGradeWithAverage), finalGradeWithMedian(finalGradeWithMedian) {}
 
 // Copy Constructor
 Student::Student(const Student& other)
-    : name(other.name), surname(other.surname), examGrade(other.examGrade),
-      finalGradeWithAverage(other.finalGradeWithAverage), finalGradeWithMedian(other.finalGradeWithMedian),
-      grades(other.grades) {}
+    : Human(other), examGrade(other.examGrade), finalGradeWithAverage(other.finalGradeWithAverage),
+      finalGradeWithMedian(other.finalGradeWithMedian), grades(other.grades) {}
 
 // Copy Assignment Operator
 Student& Student::operator=(const Student& other) {
-    if (this == &other) return *this;
-    name = other.name;
-    surname = other.surname;
+    if (this == &other) return *this; // Handle self-assignment
+    Human::operator=(other);
     examGrade = other.examGrade;
     finalGradeWithAverage = other.finalGradeWithAverage;
     finalGradeWithMedian = other.finalGradeWithMedian;
@@ -35,66 +26,26 @@ Student& Student::operator=(const Student& other) {
 
 // Move Constructor
 Student::Student(Student&& other) noexcept
-    : name(std::move(other.name)), surname(std::move(other.surname)), examGrade(other.examGrade),
-      finalGradeWithAverage(other.finalGradeWithAverage), finalGradeWithMedian(other.finalGradeWithMedian),
-      grades(std::move(other.grades)) {
-    other.~Student();
+    : Human(std::move(other)), examGrade(other.examGrade), finalGradeWithAverage(other.finalGradeWithAverage),
+      finalGradeWithMedian(other.finalGradeWithMedian), grades(std::move(other.grades)) {
+    other.examGrade = 0;
+    other.finalGradeWithAverage = 0;
+    other.finalGradeWithMedian = 0;
 }
 
 // Move Assignment Operator
 Student& Student::operator=(Student&& other) noexcept {
-    if (this == &other) return *this;
-    name = std::move(other.name);
-    surname = std::move(other.surname);
+    if (this == &other) return *this; // Handle self-assignment
+    Human::operator=(std::move(other));
     examGrade = other.examGrade;
     finalGradeWithAverage = other.finalGradeWithAverage;
     finalGradeWithMedian = other.finalGradeWithMedian;
     grades = std::move(other.grades);
 
-    other.~Student();
+    other.examGrade = 0;
+    other.finalGradeWithAverage = 0;
+    other.finalGradeWithMedian = 0;
     return *this;
-}
-
-// Output Operator
-std::ostream& operator<<(std::ostream& out, const Student& stud) {
-    out << std::setw(15) << std::left << "Name: " << stud.name << "\n"
-        << std::setw(15) << std::left << "Surname: " << stud.surname << "\n"
-        << std::setw(15) << std::left << "Exam Grade: " << stud.examGrade << "\n"
-        << std::setw(15) << std::left << "Final Grade (Avg): " << stud.finalGradeWithAverage << "\n"
-        << std::setw(15) << std::left << "Final Grade (Med): " << stud.finalGradeWithMedian << "\n"
-        << std::setw(15) << std::left << "Grades: ";
-    for (const auto& grade : stud.grades) {
-        out << grade << " ";
-    }
-    out << "\n";
-    return out;
-}
-
-// Input Operator
-std::istream& operator>>(std::istream& in, Student& stud) {
-    std::cout << "Enter Name: ";
-    in >> stud.name;
-    std::cout << "Enter Surname: ";
-    in >> stud.surname;
-
-    stud.grades.clear();
-    std::cout << "Enter Grades (end with -1, last grade will be treated as Exam Grade): ";
-    int grade;
-    while (in >> grade && grade != -1) {
-        stud.grades.push_back(grade);
-    }
-
-    if (!stud.grades.empty()) {
-        stud.examGrade = stud.grades.back();
-        stud.grades.pop_back();
-    } else {
-        stud.examGrade = 0;
-    }
-
-    stud.finalGradeWithAverage = stud.calculateAverage();
-    stud.finalGradeWithMedian = stud.calculateMedian();
-
-    return in;
 }
 
 void Student::addGrade(int grade) {
