@@ -8,6 +8,7 @@ StudentsDataSortRunner::StudentsDataSortRunner()
       printStudentsToFileService(std::make_unique<PrintStudentsToFileService>(*studentsRepo)),
       printGoodStudentsToFileService(std::make_unique<PrintStudentsToFileService>(*goodStudentsRepo)),
       printBadStudentsToFileService(std::make_unique<PrintStudentsToFileService>(*badStudentsRepo)),
+      ruleOfFiveTestService(std::make_unique<RuleOfFiveTestService>()),
       createStudentsAutomaticallyService(std::make_unique<CreateStudentsAutomaticallyService>(*studentsRepo)),
       generateStudentsByHandService(std::make_unique<GenerateStudentsByHandService>(*studentsRepo)),
       generateStudentsToFileService(std::make_unique<GenerateStudentsToFileService>()),
@@ -23,6 +24,7 @@ void StudentsDataSortRunner::updateServices() {
     printStudentsToFileService = std::make_unique<PrintStudentsToFileService>(*studentsRepo);
     printGoodStudentsToFileService = std::make_unique<PrintStudentsToFileService>(*goodStudentsRepo);
     printBadStudentsToFileService = std::make_unique<PrintStudentsToFileService>(*badStudentsRepo);
+    ruleOfFiveTestService = std::make_unique<RuleOfFiveTestService>();
     createStudentsAutomaticallyService = std::make_unique<CreateStudentsAutomaticallyService>(*studentsRepo);
     generateStudentsByHandService = std::make_unique<GenerateStudentsByHandService>(*studentsRepo);
     generateStudentsToFileService = std::make_unique<GenerateStudentsToFileService>();
@@ -59,6 +61,13 @@ void StudentsDataSortRunner::useDeques() {
 void StudentsDataSortRunner::run() {
     getUserInputService->execute(false);
     InputManager inputManager = inputManagerRepo->getInputManager();
+
+    std::cout << inputManager.getIsTestingRuleOfFive();
+
+    if (inputManager.getIsTestingRuleOfFive()) {
+        ruleOfFiveTestService->execute(false);
+        return;
+    }
 
     if (inputManager.getIsCreatingDataFiles()) {
         for (int i = 3; i < 7; i++) {

@@ -11,6 +11,8 @@
 #include "../repositories/abstract/students-list-repository.h"
 #include "../repositories/abstract/students-deque-repository.h"
 
+#include "../services/usecases/rule-of-five-test-usecase.h"
+#include "../services/abstract/rule-of-five-test-service.h"
 #include "../services/usecases/create-students-automatically-usecase.h"
 #include "../services/abstract/create-students-automatically-service.h"
 #include "../services/usecases/generate-students-by-hand-usecase.h"
@@ -45,6 +47,7 @@ private:
     std::unique_ptr<PrintStudentsToFileUseCase> printGoodStudentsToFileService;
     std::unique_ptr<PrintStudentsToFileUseCase> printBadStudentsToFileService;
 
+    std::unique_ptr<RuleOfFiveTestUseCase> ruleOfFiveTestService;
     std::unique_ptr<CreateStudentsAutomaticallyUseCase> createStudentsAutomaticallyService;
     std::unique_ptr<GenerateStudentsByHandUseCase> generateStudentsByHandService;
     std::unique_ptr<GenerateStudentsToFileUseCase> generateStudentsToFileService;

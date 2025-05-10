@@ -41,6 +41,16 @@ void GetUserInputService::execute(bool needsParameter) {
         }
         inputManager.setStrategyChoice(static_cast<InputManager::StrategyChoice>(strategyChoice));
 
+        std::cout << "Is Testing Rule of Five (0: false, 1: true): ";
+        bool isTestingRuleOfFive;
+        std::cin >> isTestingRuleOfFive;
+        if (std::cin.fail()) {
+            throw std::invalid_argument("Invalid input for whether testing rule of five");
+        }
+        inputManager.setIsTestingRuleOfFive(isTestingRuleOfFive);
+        inputManagerRepositoryContract.setInputManager(inputManager);
+        if (inputManager.getIsTestingRuleOfFive()) return;
+
         std::cout << "Is Testing Mode (0: false, 1: true): ";
         bool isTestingMode;
         std::cin >> isTestingMode;

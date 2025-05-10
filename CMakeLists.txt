@@ -20,12 +20,14 @@ include_directories(
 set(SOURCES
     src/main.cpp
     src/models/input-manager-model.cpp
+    src/models/human-model.cpp
     src/models/student-model.cpp
     src/students-data-sort-runner.cpp
     src/repositories/input-manager-repository.cpp
     src/repositories/students-vector-repository.cpp
     src/repositories/students-list-repository.cpp
     src/repositories/students-deque-repository.cpp
+    src/services/rule-of-five-test-service.cpp
     src/services/create-students-automatically-service.cpp
     src/services/generate-students-by-hand-service.cpp
     src/services/generate-students-to-file-service.cpp
