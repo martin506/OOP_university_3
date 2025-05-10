@@ -8,7 +8,14 @@ Student::Student()
     grades = {8, 9, 10};
 }
 
-Student::~Student() = default;
+Student::~Student() {
+    setName("Unknown");
+    setSurname("Unknown");
+    examGrade = 0;
+    finalGradeWithAverage = 0;
+    finalGradeWithMedian = 0;
+    grades.clear();
+};
 
 Student::Student(const std::string &name, const std::string &surname, int examGrade, double finalGradeWithAverage, double finalGradeWithMedian)
     : examGrade(examGrade), finalGradeWithAverage(finalGradeWithAverage), finalGradeWithMedian(finalGradeWithMedian)
