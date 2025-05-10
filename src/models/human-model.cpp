@@ -27,3 +27,16 @@ Human& Human::operator=(Human&& other) noexcept {
     surname = std::move(other.surname);
     return *this;
 }
+
+std::istream& operator>>(std::istream& in, Human& human) {
+    std::cout << "Enter name: ";
+    in >> human.name;
+    std::cout << "Enter surname: ";
+    in >> human.surname;
+    return in;
+}
+
+std::ostream& operator<<(std::ostream& out, const Human& human) {
+    out << "Name: " << human.name << ", Surname: " << human.surname << "\n";
+    return out;
+}

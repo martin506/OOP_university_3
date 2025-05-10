@@ -18,21 +18,9 @@ public:
     Human(Human&& other) noexcept;            // Move Constructor
     Human& operator=(Human&& other) noexcept; // Move Assignment Operator
 
-    // input operator
-    friend std::istream& operator>>(std::istream& in, Human& human) {
-        std::cout << "Enter Name: ";
-        in >> human.name;
-        std::cout << "Enter Surname: ";
-        in >> human.surname;
-        return in;
-    }
 
-    // output operator
-    friend std::ostream& operator<<(std::ostream& out, const Human& human) {
-        out << "Name: " << human.name << ", Surname: " << human.surname << "\n";
-        return out;
-    }
-
+    friend std::istream& operator>>(std::istream& in, Human& human);          // Input Operator
+    friend std::ostream& operator<<(std::ostream& out, const Human& human);   // Output Operator
 
     inline std::string getName() const { return name; }
     inline void setName(const std::string& newName) { name = newName; }
