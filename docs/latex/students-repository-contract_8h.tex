@@ -1,0 +1,49 @@
+\doxysection{src/repositories/contracts/students-\/repository-\/contract.h File Reference}
+\hypertarget{students-repository-contract_8h}{}\label{students-repository-contract_8h}\index{src/repositories/contracts/students-\/repository-\/contract.h@{src/repositories/contracts/students-\/repository-\/contract.h}}
+{\ttfamily \#include "{}../../models/abstract/student-\/model.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$deque$>$}\newline
+{\ttfamily \#include $<$variant$>$}\newline
+Include dependency graph for students-\/repository-\/contract.h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{students-repository-contract_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{students-repository-contract_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_students_repository_contract}{Students\+Repository\+Contract}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{students-repository-contract_8h_af517ff139db61a6f8a1b9e08140a5057}{Student\+Container}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{students-repository-contract_8h_af517ff139db61a6f8a1b9e08140a5057}\index{students-\/repository-\/contract.h@{students-\/repository-\/contract.h}!StudentContainer@{StudentContainer}}
+\index{StudentContainer@{StudentContainer}!students-\/repository-\/contract.h@{students-\/repository-\/contract.h}}
+\doxysubsubsection{\texorpdfstring{StudentContainer}{StudentContainer}}
+{\footnotesize\ttfamily \label{students-repository-contract_8h_af517ff139db61a6f8a1b9e08140a5057} 
+using \mbox{\hyperlink{students-repository-contract_8h_af517ff139db61a6f8a1b9e08140a5057}{Student\+Container}}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ std::variant<}
+\DoxyCodeLine{\ \ \ \ std::vector<Student>,}
+\DoxyCodeLine{\ \ \ \ std::list<Student>,}
+\DoxyCodeLine{\ \ \ \ std::deque<Student>}
+\DoxyCodeLine{>}
+
+\end{DoxyCode}

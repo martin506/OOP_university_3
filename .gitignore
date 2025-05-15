@@ -1,4 +1,63 @@
-.vscode
-compiled-files/
-text-files/
+# Ignore Visual Studio Code settings
+.vscode/
+
+# Ignore build directories
 build/
+compiled-files/
+
+# Ignore text files or temporary files
+text-files/
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Ignore CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Ignore binary files
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+*.out
+*.a
+*.lib
+
+# Ignore LaTeX temporary files (from Doxygen PDF generation)
+docs/latex/*.aux
+docs/latex/*.log
+docs/latex/*.toc
+docs/latex/*.idx
+docs/latex/*.ind
+docs/latex/*.ilg
+docs/latex/*.out
+docs/latex/*.brf
+docs/latex/*.blg
+docs/latex/*.bbl
+docs/latex/*.dvi
+docs/latex/*.ps
+docs/latex/*.pdf
+
+# Ignore Doxygen HTML output
+docs/html/
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE-specific files
+.idea/
+*.iml
+*.user
+*.workspace
+*.cproject
+*.project
+
+# Ignore Git-specific files
+*.orig

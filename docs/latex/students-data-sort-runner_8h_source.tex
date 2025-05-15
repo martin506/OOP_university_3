@@ -1,0 +1,78 @@
+\doxysection{students-\/data-\/sort-\/runner.h}
+\hypertarget{students-data-sort-runner_8h_source}{}\label{students-data-sort-runner_8h_source}\index{src/abstract/students-\/data-\/sort-\/runner.h@{src/abstract/students-\/data-\/sort-\/runner.h}}
+\mbox{\hyperlink{students-data-sort-runner_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STUDENTS\_DATA\_SORT\_RUNNER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STUDENTS\_DATA\_SORT\_RUNNER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{input-manager-repository-contract_8h}{../repositories/contracts/input-\/manager-\/repository-\/contract.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{input-manager-repository_8h}{../repositories/abstract/input-\/manager-\/repository.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{students-repository-contract_8h}{../repositories/contracts/students-\/repository-\/contract.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{students-vector-repository_8h}{../repositories/abstract/students-\/vector-\/repository.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{students-list-repository_8h}{../repositories/abstract/students-\/list-\/repository.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{students-deque-repository_8h}{../repositories/abstract/students-\/deque-\/repository.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rule-of-five-test-usecase_8h}{../services/usecases/rule-\/of-\/five-\/test-\/usecase.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rule-of-five-test-service_8h}{../services/abstract/rule-\/of-\/five-\/test-\/service.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{create-students-automatically-usecase_8h}{../services/usecases/create-\/students-\/automatically-\/usecase.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{create-students-automatically-service_8h}{../services/abstract/create-\/students-\/automatically-\/service.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{generate-students-by-hand-usecase_8h}{../services/usecases/generate-\/students-\/by-\/hand-\/usecase.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{generate-students-by-hand-service_8h}{../services/abstract/generate-\/students-\/by-\/hand-\/service.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{generate-students-to-file-usecase_8h}{../services/usecases/generate-\/students-\/to-\/file-\/usecase.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{generate-students-to-file-service_8h}{../services/abstract/generate-\/students-\/to-\/file-\/service.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{get-user-input-usecase_8h}{../services/usecases/get-\/user-\/input-\/usecase.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{get-user-input-service_8h}{../services/abstract/get-\/user-\/input-\/service.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{print-students-to-console-usecase_8h}{../services/usecases/print-\/students-\/to-\/console-\/usecase.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{print-students-to-console-service_8h}{../services/abstract/print-\/students-\/to-\/console-\/service.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{print-students-to-file-usecase_8h}{../services/usecases/print-\/students-\/to-\/file-\/usecase.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{print-students-to-file-service_8h}{../services/abstract/print-\/students-\/to-\/file-\/service.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{save-students-data-from-file-usecase_8h}{../services/usecases/save-\/students-\/data-\/from-\/file-\/usecase.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{save-students-data-from-file-service_8h}{../services/abstract/save-\/students-\/data-\/from-\/file-\/service.h}}"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sort-students-usecase_8h}{../services/usecases/sort-\/students-\/usecase.h}}"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sort-students-service_8h}{../services/abstract/sort-\/students-\/service.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sort-students-to-bad-and-good-usecase_8h}{../services/usecases/sort-\/students-\/to-\/bad-\/and-\/good-\/usecase.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sort-students-to-bad-and-good-service_8h}{../services/abstract/sort-\/students-\/to-\/bad-\/and-\/good-\/service.h}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sort-students-to-bad-and-good-strategy-2-service_8h}{../services/abstract/sort-\/students-\/to-\/bad-\/and-\/good-\/strategy-\/2-\/service.h}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}../tests/abstract/tests-\/controller.h"{}}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_students_data_sort_runner_a3c24e5767b169ed6fe2c2f9e1bda92b4}{StudentsDataSortRunner}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ std::unique\_ptr<InputManagerRepositoryContract>\ \mbox{\hyperlink{class_students_data_sort_runner_a90972dfe766ea5fb2863f1e02879f0f0}{inputManagerRepo}};}
+\DoxyCodeLine{00042\ \ \ \ \ std::unique\_ptr<StudentsRepositoryContract>\ \mbox{\hyperlink{class_students_data_sort_runner_ad7d39b36a6e428f3cfda0f8e9da5a3f3}{studentsRepo}};}
+\DoxyCodeLine{00043\ \ \ \ \ std::unique\_ptr<StudentsRepositoryContract>\ \mbox{\hyperlink{class_students_data_sort_runner_a65371d8f6c01d36c7832118f4fbbfc42}{goodStudentsRepo}};}
+\DoxyCodeLine{00044\ \ \ \ \ std::unique\_ptr<StudentsRepositoryContract>\ \mbox{\hyperlink{class_students_data_sort_runner_ab9427fcd6b223d2c441478b81fa26ee0}{badStudentsRepo}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ std::unique\_ptr<PrintStudentsToFileUseCase>\ \mbox{\hyperlink{class_students_data_sort_runner_a5de28c6612a0222e531c6e85b2a3d53a}{printStudentsToFileService}};}
+\DoxyCodeLine{00047\ \ \ \ \ std::unique\_ptr<PrintStudentsToFileUseCase>\ \mbox{\hyperlink{class_students_data_sort_runner_ab5face3b97f3de675796576837c91d74}{printGoodStudentsToFileService}};}
+\DoxyCodeLine{00048\ \ \ \ \ std::unique\_ptr<PrintStudentsToFileUseCase>\ \mbox{\hyperlink{class_students_data_sort_runner_a968d4be4defb9dac9615d9b5ba709c4e}{printBadStudentsToFileService}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ std::unique\_ptr<RuleOfFiveTestUseCase>\ \mbox{\hyperlink{class_students_data_sort_runner_a3fc5989ee2a2053be0c5e15395b162db}{ruleOfFiveTestService}};}
+\DoxyCodeLine{00051\ \ \ \ \ std::unique\_ptr<CreateStudentsAutomaticallyUseCase>\ \mbox{\hyperlink{class_students_data_sort_runner_a428e3e246ff6dc76be2d352c832ad704}{createStudentsAutomaticallyService}};}
+\DoxyCodeLine{00052\ \ \ \ \ std::unique\_ptr<GenerateStudentsByHandUseCase>\ \mbox{\hyperlink{class_students_data_sort_runner_ac8d4be4f683cac87974fa61c885f9975}{generateStudentsByHandService}};}
+\DoxyCodeLine{00053\ \ \ \ \ std::unique\_ptr<GenerateStudentsToFileUseCase>\ \mbox{\hyperlink{class_students_data_sort_runner_a8cbb7e6e2c2ae6dc80d65da375b2d765}{generateStudentsToFileService}};}
+\DoxyCodeLine{00054\ \ \ \ \ std::unique\_ptr<GetUserInputUseCase>\ \mbox{\hyperlink{class_students_data_sort_runner_aed426ce77524381a6765afdff46beee8}{getUserInputService}};}
+\DoxyCodeLine{00055\ \ \ \ \ std::unique\_ptr<PrintStudentsToConsoleUseCase>\ \mbox{\hyperlink{class_students_data_sort_runner_a6b3afd28b2cd3ae52025e7d2b4c1b8d8}{printStudentsToConsoleService}};}
+\DoxyCodeLine{00056\ \ \ \ \ std::unique\_ptr<SaveStudentsDataFromFileUseCase>\ \mbox{\hyperlink{class_students_data_sort_runner_ae4906dbca5cee174a2e0833b1747e766}{saveStudentsDataFromFileService}};}
+\DoxyCodeLine{00057\ \ \ \ \ std::unique\_ptr<SortStudentsUseCase>\ \mbox{\hyperlink{class_students_data_sort_runner_a3dd77c0c7f6fbe4f123d25fca6f85987}{sortStudentsService}};}
+\DoxyCodeLine{00058\ \ \ \ \ std::unique\_ptr<SortStudentsToBadAndGoodUseCase>\ \mbox{\hyperlink{class_students_data_sort_runner_af0c0b537ae32dacaac7cc170ecb0863e}{sortStudentsToBadAndGoodService}};}
+\DoxyCodeLine{00059\ \ \ \ \ std::unique\_ptr<SortStudentsToBadAndGoodUseCase>\ \mbox{\hyperlink{class_students_data_sort_runner_ac5e89c83264c9aa51702cab8c5fa5715}{sortStudentsToBadAndGoodServiceStrategy2}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ std::unique\_ptr<TestsController>\ \mbox{\hyperlink{class_students_data_sort_runner_a3f77b0722c065427df36f2bd5aab5b1a}{testsController}};}
+\DoxyCodeLine{00062\ \ \ \ \ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{class_students_data_sort_runner_a3c24e5767b169ed6fe2c2f9e1bda92b4}{StudentsDataSortRunner}}();}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_students_data_sort_runner_a1c453259867f52cc88c45c2aa5b05c1a}{run}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_students_data_sort_runner_a00a90fa3a7a1ddb560da366f57f80ea4}{useVectors}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_students_data_sort_runner_a23b0b80207c98b41ffbad4f547a4ad02}{useDeques}}();}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_students_data_sort_runner_a6adc55cdea010143ce72df51de585f41}{useLists}}();}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_students_data_sort_runner_ad614be28a078ecaf52e9fe586303ba79}{updateServices}}();}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

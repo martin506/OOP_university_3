@@ -1,0 +1,22 @@
+\doxysection{sort-\/students-\/service.h}
+\hypertarget{sort-students-service_8h_source}{}\label{sort-students-service_8h_source}\index{src/services/abstract/sort-\/students-\/service.h@{src/services/abstract/sort-\/students-\/service.h}}
+\mbox{\hyperlink{sort-students-service_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SORT\_STUDENTS\_SERVICE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SORT\_STUDENTS\_SERVICE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sort-students-usecase_8h}{../usecases/sort-\/students-\/usecase.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{students-repository-contract_8h}{../../repositories/contracts/students-\/repository-\/contract.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_sort_students_service_aabbff81e3c2c39c060fa7999f14f1d92}{SortStudentsService}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_sort_students_use_case}{SortStudentsUseCase}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{class_students_repository_contract}{StudentsRepositoryContract}}\&\ \mbox{\hyperlink{class_sort_students_service_a2dd9fef985e6a4b2973277f46a6efa93}{studentsRepository}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_sort_students_service_aabbff81e3c2c39c060fa7999f14f1d92}{SortStudentsService}}(\mbox{\hyperlink{class_students_repository_contract}{StudentsRepositoryContract}}\&\ \mbox{\hyperlink{class_sort_students_service_a2dd9fef985e6a4b2973277f46a6efa93}{studentsRepository}});}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_sort_students_service_ad42eef9a07c9776104906ad531f2cb2b}{execute}}(\textcolor{keywordtype}{bool}\ needsParameter)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00014\ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}
