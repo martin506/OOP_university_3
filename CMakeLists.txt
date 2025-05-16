@@ -60,3 +60,20 @@ add_custom_target(doc ALL
     COMMENT "Generating API documentation with Doxygen"
     VERBATIM
 )
+
+# Find Google Test
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+
+# Add test executable
+add_executable(runTests
+    tests/test_main.cpp
+    tests/student_model_test.cpp
+    tests/human_model_test.cpp
+)
+
+# Link Google Test libraries
+target_link_libraries(runTests ${GTEST_LIBRARIES} pthrea
+
+enable_testing()
+add_test(NAME runTests COMMAND runTests)
