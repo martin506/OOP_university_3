@@ -52,7 +52,8 @@ find_package(Doxygen REQUIRED)
 set(DOXYGEN_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/docs)
 set(DOXYGEN_INPUT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
-set(DOXYGEN_CONFIG_FILE ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
+# Set the path to the Doxyfile in the root directory
+set(DOXYGEN_CONFIG_FILE ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile)
 
 add_custom_target(doc ALL
     COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_CONFIG_FILE}
@@ -67,13 +68,14 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 # Add test executable
 add_executable(runTests
-    tests/test_main.cpp
-    tests/student_model_test.cpp
-    tests/human_model_test.cpp
+    ../tests/test-main.cpp
 )
 
 # Link Google Test libraries
-target_link_libraries(runTests ${GTEST_LIBRARIES} pthrea
+target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
 
 enable_testing()
 add_test(NAME runTests COMMAND runTests)
+
+
+
