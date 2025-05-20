@@ -68,7 +68,10 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 # Add test executable
 add_executable(runTests
-    ../tests/test-main.cpp
+    tests/test-main.cpp
+    tests/test-student-model.cpp
+    src/models/student-model.cpp
+    src/models/human-model.cpp
 )
 
 # Link Google Test libraries

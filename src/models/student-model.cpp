@@ -100,7 +100,8 @@ double Student::calculateAverage() const
     if (grades.empty())
         return 0.0;
     double sum = std::accumulate(grades.begin(), grades.end(), 0);
-    return (sum / grades.size()) * 0.4 + 0.6 * examGrade;
+    double average = sum / grades.size();
+    return 0.4 * average + 0.6 * examGrade;
 }
 
 double Student::calculateMedian() const
@@ -110,14 +111,16 @@ double Student::calculateMedian() const
     std::vector<int> sortedGrades = grades;
     std::sort(sortedGrades.begin(), sortedGrades.end());
     size_t size = sortedGrades.size();
+    double median;
     if (size % 2 == 0)
     {
-        return ((sortedGrades[size / 2 - 1] + sortedGrades[size / 2]) / 2.0) * 0.4 + 0.6 * examGrade;
+        median = (sortedGrades[size / 2 - 1] + sortedGrades[size / 2]) / 2.0;
     }
     else
     {
-        return sortedGrades[size / 2] * 0.4 + 0.6 * examGrade;
+        median = sortedGrades[size / 2];
     }
+    return 0.4 * median + 0.6 * examGrade;
 }
 
 bool Student::isFinalGradeWithAveragePassing() const
@@ -133,12 +136,12 @@ bool Student::isFinalGradeWithMedianPassing() const
 // Output Operator
 std::ostream &operator<<(std::ostream &out, const Student &stud)
 {
-    out << std::setw(15) << std::left << "Name: " << stud.getName() << "\n"
-        << std::setw(15) << std::left << "Surname: " << stud.getSurname() << "\n"
-        << std::setw(15) << std::left << "Exam Grade: " << stud.examGrade << "\n"
-        << std::setw(15) << std::left << "Final Grade (Avg): " << stud.finalGradeWithAverage << "\n"
-        << std::setw(15) << std::left << "Final Grade (Med): " << stud.finalGradeWithMedian << "\n"
-        << std::setw(15) << std::left << "Grades: ";
+    out << "Name: " << stud.getName() << "\n"
+        << "Surname: " << stud.getSurname() << "\n"
+        << "Exam Grade: " << stud.examGrade << "\n"
+        << "Final Grade (Avg): " << stud.finalGradeWithAverage << "\n"
+        << "Final Grade (Med): " << stud.finalGradeWithMedian << "\n"
+        << "Grades: ";
     for (const auto &grade : stud.grades)
     {
         out << grade << " ";
@@ -151,15 +154,12 @@ std::ostream &operator<<(std::ostream &out, const Student &stud)
 std::istream &operator>>(std::istream &in, Student &stud)
 {
     std::string name, surname;
-    std::cout << "Enter Name: ";
     in >> name;
     stud.setName(name);
-    std::cout << "Enter Surname: ";
     in >> surname;
     stud.setSurname(surname);
 
     stud.grades.clear();
-    std::cout << "Enter Grades (end with -1, last grade will be treated as Exam Grade): ";
     int grade;
     while (in >> grade && grade != -1)
     {

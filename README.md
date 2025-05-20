@@ -159,3 +159,13 @@ This project is an **Object-Oriented Programming (OOP)** task from university. I
 - **SSD**: 500 GB
 - **RAM**: 32 GB
 - **CPU**: 2.6GHz 6‑core Intel Core i7, Turbo Boost up to 4.5GHz, with 12MB shared L3 cache
+
+
+## Instructions
+- `cd to the root of the project`
+- `mkdir build`
+- `cd build`
+- `cmake ..`
+- `make`
+- **To run tests** `./runTests`
+- **To run program** `./OOPUzduotis2`
