@@ -1,0 +1,26 @@
+\doxysection{print-\/students-\/to-\/file-\/service.h}
+\hypertarget{print-students-to-file-service_8h_source}{}\label{print-students-to-file-service_8h_source}\index{src/services/abstract/print-\/students-\/to-\/file-\/service.h@{src/services/abstract/print-\/students-\/to-\/file-\/service.h}}
+\mbox{\hyperlink{print-students-to-file-service_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PRINT\_STUDENTS\_TO\_FILE\_SERVICE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PRINT\_STUDENTS\_TO\_FILE\_SERVICE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{print-students-to-file-usecase_8h}{../usecases/print-\/students-\/to-\/file-\/usecase.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{students-repository-contract_8h}{../../repositories/contracts/students-\/repository-\/contract.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_print_students_to_file_service_ab47015d7558cc5739bd7352f815672d5}{PrintStudentsToFileService}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_print_students_to_file_use_case}{PrintStudentsToFileUseCase}}\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_students_repository_contract}{StudentsRepositoryContract}}\&\ \mbox{\hyperlink{class_print_students_to_file_service_a38d67f0ac9d0afd84994a847f4c903dd}{studentsRepository}};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_print_students_to_file_service_ab47015d7558cc5739bd7352f815672d5}{PrintStudentsToFileService}}(\mbox{\hyperlink{class_students_repository_contract}{StudentsRepositoryContract}}\&\ repo);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_print_students_to_file_service_adedcbe731433cde004c7483847ea6867}{execute}}(std::string\ fileName)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

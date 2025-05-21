@@ -1,0 +1,31 @@
+\doxysection{students-\/repository-\/contract.h}
+\hypertarget{students-repository-contract_8h_source}{}\label{students-repository-contract_8h_source}\index{src/repositories/contracts/students-\/repository-\/contract.h@{src/repositories/contracts/students-\/repository-\/contract.h}}
+\mbox{\hyperlink{students-repository-contract_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STUDENTS\_VECTOR\_REPOSITORY\_CONTRACT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STUDENTS\_VECTOR\_REPOSITORY\_CONTRACT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{student-model_8h}{../../models/abstract/student-\/model.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <deque>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <variant>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{using\ }\mbox{\hyperlink{students-repository-contract_8h_af517ff139db61a6f8a1b9e08140a5057}{StudentContainer}}\ =\ std::variant<}
+\DoxyCodeLine{00011\ \ \ \ \ std::vector<Student>,}
+\DoxyCodeLine{00012\ \ \ \ \ std::list<Student>,}
+\DoxyCodeLine{00013\ \ \ \ \ std::deque<Student>}
+\DoxyCodeLine{00014\ >;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_students_repository_contract}{StudentsRepositoryContract}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_students_repository_contract_a7e0c8b87f44404ca919025ff92456f58}{\string~StudentsRepositoryContract}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_students_repository_contract_a756c47c3e67908971818c149c296f949}{save}}(\mbox{\hyperlink{class_student}{Student}}\ studentWithGradesVector)\ =\ 0;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{students-repository-contract_8h_af517ff139db61a6f8a1b9e08140a5057}{StudentContainer}}\ \mbox{\hyperlink{class_students_repository_contract_a3ebd17cea0bc4705b8aaca402a91ce94}{getStudentWithGradesVector}}()\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_students_repository_contract_a05ec8b6e8e47bbffd5f80272bcca649d}{sortData}}()\ =\ 0;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_students_repository_contract_a22ee2f5787de04daaaa64db80a75e0c7}{clearData}}()\ =\ 0;}
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

@@ -1,0 +1,137 @@
+\doxysection{Students\+Vector\+Repository Class Reference}
+\hypertarget{class_students_vector_repository}{}\label{class_students_vector_repository}\index{StudentsVectorRepository@{StudentsVectorRepository}}
+
+
+{\ttfamily \#include $<$students-\/vector-\/repository.\+h$>$}
+
+
+
+Inheritance diagram for Students\+Vector\+Repository\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{class_students_vector_repository__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Students\+Vector\+Repository\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_students_vector_repository__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_students_vector_repository_af0f4ea5f56fdcba8f5e8fc36de4333d5}{Students\+Vector\+Repository}} (\mbox{\hyperlink{class_input_manager_repository_contract}{Input\+Manager\+Repository\+Contract}} \&\mbox{\hyperlink{class_students_vector_repository_add8eb1ed5adf591cc53b37cf7b94b69a}{input\+Manager\+Repository}})
+\item 
+\mbox{\hyperlink{class_students_vector_repository_ac89664ed758fe01c820e2e68f94980e7}{\texorpdfstring{$\sim$}{\string~}\+Students\+Vector\+Repository}} () override=default
+\item 
+void \mbox{\hyperlink{class_students_vector_repository_a784da96d166d3c7e3c13dda001a1e256}{save}} (\mbox{\hyperlink{class_student}{Student}} student\+With\+Grades\+Vector) override
+\item 
+\mbox{\hyperlink{students-repository-contract_8h_af517ff139db61a6f8a1b9e08140a5057}{Student\+Container}} \mbox{\hyperlink{class_students_vector_repository_a6c37c8819e6826e6308474c2e43a6490}{get\+Student\+With\+Grades\+Vector}} () override
+\item 
+void \mbox{\hyperlink{class_students_vector_repository_a5075a3afe6d560f7f175d1fec5558b77}{sort\+Data}} () override
+\item 
+void \mbox{\hyperlink{class_students_vector_repository_ace0bd72290b581d067d57b5b11b615d4}{clear\+Data}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_students_repository_contract}{Students\+Repository\+Contract}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_students_repository_contract_a7e0c8b87f44404ca919025ff92456f58}{\texorpdfstring{$\sim$}{\string~}\+Students\+Repository\+Contract}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_student}{Student}} $>$ \mbox{\hyperlink{class_students_vector_repository_afacf9b6f314f0f8a17e668f6e13205d5}{students}}
+\item 
+\mbox{\hyperlink{class_input_manager_repository_contract}{Input\+Manager\+Repository\+Contract}} \& \mbox{\hyperlink{class_students_vector_repository_add8eb1ed5adf591cc53b37cf7b94b69a}{input\+Manager\+Repository}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_students_vector_repository_af0f4ea5f56fdcba8f5e8fc36de4333d5}\index{StudentsVectorRepository@{StudentsVectorRepository}!StudentsVectorRepository@{StudentsVectorRepository}}
+\index{StudentsVectorRepository@{StudentsVectorRepository}!StudentsVectorRepository@{StudentsVectorRepository}}
+\doxysubsubsection{\texorpdfstring{StudentsVectorRepository()}{StudentsVectorRepository()}}
+{\footnotesize\ttfamily \label{class_students_vector_repository_af0f4ea5f56fdcba8f5e8fc36de4333d5} 
+Students\+Vector\+Repository\+::\+Students\+Vector\+Repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_input_manager_repository_contract}{Input\+Manager\+Repository\+Contract}} \&}]{input\+Manager\+Repository}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{class_students_vector_repository_ac89664ed758fe01c820e2e68f94980e7}\index{StudentsVectorRepository@{StudentsVectorRepository}!````~StudentsVectorRepository@{\texorpdfstring{$\sim$}{\string~}StudentsVectorRepository}}
+\index{````~StudentsVectorRepository@{\texorpdfstring{$\sim$}{\string~}StudentsVectorRepository}!StudentsVectorRepository@{StudentsVectorRepository}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}StudentsVectorRepository()}{\string~StudentsVectorRepository()}}
+{\footnotesize\ttfamily \label{class_students_vector_repository_ac89664ed758fe01c820e2e68f94980e7} 
+Students\+Vector\+Repository\+::\texorpdfstring{$\sim$}{\string~}\+Students\+Vector\+Repository (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_students_vector_repository_ace0bd72290b581d067d57b5b11b615d4}\index{StudentsVectorRepository@{StudentsVectorRepository}!clearData@{clearData}}
+\index{clearData@{clearData}!StudentsVectorRepository@{StudentsVectorRepository}}
+\doxysubsubsection{\texorpdfstring{clearData()}{clearData()}}
+{\footnotesize\ttfamily \label{class_students_vector_repository_ace0bd72290b581d067d57b5b11b615d4} 
+void Students\+Vector\+Repository\+::clear\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_students_repository_contract_a22ee2f5787de04daaaa64db80a75e0c7}{Students\+Repository\+Contract}}.
+
+\Hypertarget{class_students_vector_repository_a6c37c8819e6826e6308474c2e43a6490}\index{StudentsVectorRepository@{StudentsVectorRepository}!getStudentWithGradesVector@{getStudentWithGradesVector}}
+\index{getStudentWithGradesVector@{getStudentWithGradesVector}!StudentsVectorRepository@{StudentsVectorRepository}}
+\doxysubsubsection{\texorpdfstring{getStudentWithGradesVector()}{getStudentWithGradesVector()}}
+{\footnotesize\ttfamily \label{class_students_vector_repository_a6c37c8819e6826e6308474c2e43a6490} 
+\mbox{\hyperlink{students-repository-contract_8h_af517ff139db61a6f8a1b9e08140a5057}{Student\+Container}} Students\+Vector\+Repository\+::get\+Student\+With\+Grades\+Vector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_students_repository_contract_a3ebd17cea0bc4705b8aaca402a91ce94}{Students\+Repository\+Contract}}.
+
+\Hypertarget{class_students_vector_repository_a784da96d166d3c7e3c13dda001a1e256}\index{StudentsVectorRepository@{StudentsVectorRepository}!save@{save}}
+\index{save@{save}!StudentsVectorRepository@{StudentsVectorRepository}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \label{class_students_vector_repository_a784da96d166d3c7e3c13dda001a1e256} 
+void Students\+Vector\+Repository\+::save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_student}{Student}}}]{student\+With\+Grades\+Vector}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_students_repository_contract_a756c47c3e67908971818c149c296f949}{Students\+Repository\+Contract}}.
+
+\Hypertarget{class_students_vector_repository_a5075a3afe6d560f7f175d1fec5558b77}\index{StudentsVectorRepository@{StudentsVectorRepository}!sortData@{sortData}}
+\index{sortData@{sortData}!StudentsVectorRepository@{StudentsVectorRepository}}
+\doxysubsubsection{\texorpdfstring{sortData()}{sortData()}}
+{\footnotesize\ttfamily \label{class_students_vector_repository_a5075a3afe6d560f7f175d1fec5558b77} 
+void Students\+Vector\+Repository\+::sort\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_students_repository_contract_a05ec8b6e8e47bbffd5f80272bcca649d}{Students\+Repository\+Contract}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_students_vector_repository_a5075a3afe6d560f7f175d1fec5558b77_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_students_vector_repository_add8eb1ed5adf591cc53b37cf7b94b69a}\index{StudentsVectorRepository@{StudentsVectorRepository}!inputManagerRepository@{inputManagerRepository}}
+\index{inputManagerRepository@{inputManagerRepository}!StudentsVectorRepository@{StudentsVectorRepository}}
+\doxysubsubsection{\texorpdfstring{inputManagerRepository}{inputManagerRepository}}
+{\footnotesize\ttfamily \label{class_students_vector_repository_add8eb1ed5adf591cc53b37cf7b94b69a} 
+\mbox{\hyperlink{class_input_manager_repository_contract}{Input\+Manager\+Repository\+Contract}}\& Students\+Vector\+Repository\+::input\+Manager\+Repository\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_students_vector_repository_afacf9b6f314f0f8a17e668f6e13205d5}\index{StudentsVectorRepository@{StudentsVectorRepository}!students@{students}}
+\index{students@{students}!StudentsVectorRepository@{StudentsVectorRepository}}
+\doxysubsubsection{\texorpdfstring{students}{students}}
+{\footnotesize\ttfamily \label{class_students_vector_repository_afacf9b6f314f0f8a17e668f6e13205d5} 
+std\+::vector$<$\mbox{\hyperlink{class_student}{Student}}$>$ Students\+Vector\+Repository\+::students\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/repositories/abstract/\mbox{\hyperlink{students-vector-repository_8h}{students-\/vector-\/repository.\+h}}\item 
+src/repositories/\mbox{\hyperlink{students-vector-repository_8cpp}{students-\/vector-\/repository.\+cpp}}\end{DoxyCompactItemize}

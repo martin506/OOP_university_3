@@ -1,0 +1,57 @@
+\doxysection{student-\/model.h}
+\hypertarget{student-model_8h_source}{}\label{student-model_8h_source}\index{src/models/abstract/student-\/model.h@{src/models/abstract/student-\/model.h}}
+\mbox{\hyperlink{student-model_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ STUDENT\_MODEL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ STUDENT\_MODEL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{human-model_8h}{human-\/model.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <numeric>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_human_a4f84fcddcedd434023a001eba00a095c}{Human}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_student_a0042c819da6458bb8956852bafce4664}{examGrade}};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_student_aed10f89e3b7eeb7c62d6df5e29e3f9b0}{finalGradeWithAverage}};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_student_af71e113ea43e6d45f719e3b256b4cd69}{finalGradeWithMedian}};}
+\DoxyCodeLine{00017\ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{class_student_af7d0bacc326744ef438109be5feaf20c}{grades}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}();}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_student_a54a8ea060d6cd04222c3a2f89829f105}{\string~Student}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_human_a31d00b3423e93034e0636d01973a706d}{name}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_human_ad7b80567741a5bf6549d467c34cedc88}{surname}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_student_a0042c819da6458bb8956852bafce4664}{examGrade}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_student_aed10f89e3b7eeb7c62d6df5e29e3f9b0}{finalGradeWithAverage}},\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_student_af71e113ea43e6d45f719e3b256b4cd69}{finalGradeWithMedian}});}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ other);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Copy\ Constructor}}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ \mbox{\hyperlink{class_student_ad05dd6148523a2a8b38128b60297b52a}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ other);\ \ \ \ \ \textcolor{comment}{//\ Copy\ Assignment\ Operator}}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}(\mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\&\ other)\ \textcolor{keyword}{noexcept};\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Move\ Constructor}}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ \mbox{\hyperlink{class_student_ad05dd6148523a2a8b38128b60297b52a}{operator=}}(\mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\&\ other)\ \textcolor{keyword}{noexcept};\ \textcolor{comment}{//\ Move\ Assignment\ Operator}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{class_student_ad30d926aeee0217dbf13aaf39c3ebd1f}{operator<<}}(std::ostream\&\ out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ stud);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\&\ \mbox{\hyperlink{class_student_a24784a14ed76c4b0395dcb3529b954c1}{operator>>}}(std::istream\&\ in,\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ stud);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_student_a5b3fe9047d32ff3fa247d2a438ac2f36}{getExamGrade}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_student_a0042c819da6458bb8956852bafce4664}{examGrade}};\ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_a4796570226014c8bd344b13ea557a9a4}{setExamGrade}}(\textcolor{keywordtype}{int}\ newExamGrade)\ \{\ \mbox{\hyperlink{class_student_a0042c819da6458bb8956852bafce4664}{examGrade}}\ =\ newExamGrade;\ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_student_a4addb594a5df7e6f5ca97b76da7c6020}{getFinalGradeWithAverage}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_student_aed10f89e3b7eeb7c62d6df5e29e3f9b0}{finalGradeWithAverage}};\ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_ab33221ebb12ccbecd65d7beba9572f6f}{setFinalGradeWithAverage}}(\textcolor{keywordtype}{double}\ newFinalGradeWithAverage)\ \{\ \mbox{\hyperlink{class_student_aed10f89e3b7eeb7c62d6df5e29e3f9b0}{finalGradeWithAverage}}\ =\ newFinalGradeWithAverage;\ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_student_adf92127298dd70b5ca24297ba71cfd54}{getFinalGradeWithMedian}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_student_af71e113ea43e6d45f719e3b256b4cd69}{finalGradeWithMedian}};\ \}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_a66046eeffb711baca5c4487586dad23b}{setFinalGradeWithMedian}}(\textcolor{keywordtype}{double}\ newFinalGradeWithMedian)\ \{\ \mbox{\hyperlink{class_student_af71e113ea43e6d45f719e3b256b4cd69}{finalGradeWithMedian}}\ =\ newFinalGradeWithMedian;\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ std::vector<int>\&\ \mbox{\hyperlink{class_student_a4554ee896b02547f417763b821da8df1}{getGrades}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_student_af7d0bacc326744ef438109be5feaf20c}{grades}};\ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_a93d8cd10ac7977887c5fb8aaadc027f8}{setGrades}}(\textcolor{keyword}{const}\ std::vector<int>\&\ newGrades)\ \{\ \mbox{\hyperlink{class_student_af7d0bacc326744ef438109be5feaf20c}{grades}}\ =\ newGrades;\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_a10420ce64267f4a204b493ab616d8862}{addGrade}}(\textcolor{keywordtype}{int}\ grade)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_student_a29fb3e7e96c6e6fa88f3bad95fe927dc}{removeLastGrade}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_student_a9a6d4029aec39d1514b76708d771b4ab}{calculateAverage}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_student_a3f2931cef12dd293bb9cc9eaa0922fcd}{calculateMedian}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_student_a2c9b15a5a5eebbca39ad778b9e5bc3a3}{isFinalGradeWithAveragePassing}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_student_a2b2221ecbce3be22aa69312d4e7d552d}{isFinalGradeWithMedianPassing}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
