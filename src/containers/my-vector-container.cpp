@@ -114,3 +114,19 @@ const T* MyVector<T>::data() const {
     return arr.get();
 }
 
+template <typename T>
+void MyVector<T>::swap(MyVector& other) {
+    std::swap(arr, other.arr);
+    std::swap(size, other.size);
+    std::swap(capacity, other.capacity);
+}
+
+template <typename T>
+void MyVector<T>::assign(size_t count, const T& value) {
+    arr = std::make_unique<T[]>(count);
+    size = count;
+    capacity = count;
+    for (size_t i = 0; i < count; ++i) {
+        arr[i] = value;
+    }
+}
