@@ -175,3 +175,18 @@ void MyVector<T>::remove_if(bool (*predicate)(const T&)) {
     }
     size = new_size;
 }
+
+template <typename T>
+void MyVector<T>::swap_elements(size_t index1, size_t index2) {
+    if (index1 >= size || index2 >= size) {
+        throw std::out_of_range("Index out of range");
+    }
+    std::swap(arr[index1], arr[index2]);
+}
+
+template <typename T>
+void MyVector<T>::fill(const T& value) {
+    for (size_t i = 0; i < size; ++i) {
+        arr[i] = value;
+    }
+}
