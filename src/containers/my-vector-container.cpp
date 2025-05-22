@@ -49,3 +49,8 @@ template <typename T>
 size_t MyVector<T>::get_size() const {
     return size;
 }
+
+template <typename T>
+size_t MyVector<T>::get_capacity() const {
+    return capacity;
+}
