@@ -152,3 +152,25 @@ TEST(MyVectorTest, Fill) {
     EXPECT_EQ(vec[2], 5);
 }
 
+// Test swap
+TEST(MyVectorTest, Swap) {
+    MyVector<int> vec1;
+    vec1.push_back(1);
+    vec1.push_back(2);
+
+    MyVector<int> vec2;
+    vec2.push_back(3);
+    vec2.push_back(4);
+    vec2.push_back(5);
+
+    vec1.swap(vec2);
+
+    EXPECT_EQ(vec1.get_size(), 3);
+    EXPECT_EQ(vec1[0], 3);
+    EXPECT_EQ(vec1[1], 4);
+    EXPECT_EQ(vec1[2], 5);
+
+    EXPECT_EQ(vec2.get_size(), 2);
+    EXPECT_EQ(vec2[0], 1);
+    EXPECT_EQ(vec2[1], 2);
+}
