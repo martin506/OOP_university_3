@@ -130,3 +130,28 @@ void MyVector<T>::assign(size_t count, const T& value) {
         arr[i] = value;
     }
 }
+
+template <typename T>
+void MyVector<T>::reserve(size_t new_capacity) {
+    if (new_capacity > capacity) {
+        std::unique_ptr<T[]> new_arr = std::make_unique<T[]>(new_capacity);
+        for (size_t i = 0; i < size; ++i) {
+            new_arr[i] = std::move(arr[i]);
+        }
+        arr = std::move(new_arr);
+        capacity = new_capacity;
+    }
+}
+
+template <typename T>
+void MyVector<T>::shrink_to_fit() {
+    if (size < capacity) {
+        std::unique_ptr<T[]> new_arr = std::make_unique<T[]>(size);
+        for (size_t i = 0; i < size; ++i) {
+            new_arr[i] = std::move(arr[i]);
+        }
+        arr = std::move(new_arr);
+        capacity = size;
+    }
+}
+
