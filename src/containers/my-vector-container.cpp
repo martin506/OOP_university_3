@@ -44,3 +44,8 @@ template <typename T>
 bool MyVector<T>::empty() const {
     return size == 0;
 }
+
+template <typename T>
+size_t MyVector<T>::get_size() const {
+    return size;
+}
