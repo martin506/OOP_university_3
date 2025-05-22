@@ -83,3 +83,4 @@ target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
 
 enable_testing()
 add_test(NAME runTests COMMAND runTests)
+
