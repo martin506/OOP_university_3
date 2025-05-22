@@ -48,3 +48,39 @@ TEST(MyVectorTest, Insert) {
     EXPECT_EQ(vec[1], 2);
     EXPECT_EQ(vec[2], 3);
 }
+
+// Test erase
+TEST(MyVectorTest, Erase) {
+    MyVector<int> vec;
+    vec.push_back(1);
+    vec.push_back(2);
+    vec.push_back(3);
+    vec.erase(1);
+
+    EXPECT_EQ(vec.get_size(), 2);
+    EXPECT_EQ(vec[0], 1);
+    EXPECT_EQ(vec[1], 3);
+}
+
+// Test clear
+TEST(MyVectorTest, Clear) {
+    MyVector<int> vec;
+    vec.push_back(1);
+    vec.push_back(2);
+    vec.clear();
+
+    EXPECT_TRUE(vec.empty());
+    EXPECT_EQ(vec.get_size(), 0);
+}
+
+// Test at (bounds-checked access)
+TEST(MyVectorTest, At) {
+    MyVector<int> vec;
+    vec.push_back(1);
+    vec.push_back(2);
+
+    EXPECT_EQ(vec.at(0), 1);
+    EXPECT_EQ(vec.at(1), 2);
+
+    EXPECT_THROW(vec.at(2), std::out_of_range);
+}
