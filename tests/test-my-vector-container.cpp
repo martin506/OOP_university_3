@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include "../src/containers/my-vector-container.h"
+#include "../src/models/abstract/student-model.h"
 
 // Test default constructor
 TEST(MyVectorTest, DefaultConstructor) {
@@ -8,6 +9,85 @@ TEST(MyVectorTest, DefaultConstructor) {
     EXPECT_EQ(vec.get_capacity(), 0);
     EXPECT_TRUE(vec.empty());
 }
+
+// Test push_back with MyVector<Student>
+TEST(MyVectorTest, PushBackWithStudent) {
+    MyVector<Student> vec;
+    Student student1("John", "Doe", 9, 8.5, 8.0);
+    Student student2("Alice", "Smith", 10, 9.5, 9.0);
+
+    vec.push_back(student1);
+    vec.push_back(student2);
+
+    EXPECT_EQ(vec.get_size(), 2);
+    EXPECT_EQ(vec[0].getName(), "John");
+    EXPECT_EQ(vec[1].getName(), "Alice");
+}
+
+// Test Rule of Five: Copy Constructor
+TEST(MyVectorTest, CopyConstructor) {
+    MyVector<int> vec1;
+    vec1.push_back(1);
+    vec1.push_back(2);
+    vec1.push_back(3);
+
+    MyVector<int> vec2 = vec1; // Copy constructor
+
+    EXPECT_EQ(vec2.get_size(), 3);
+    EXPECT_EQ(vec2[0], 1);
+    EXPECT_EQ(vec2[1], 2);
+    EXPECT_EQ(vec2[2], 3);
+}
+
+// Test Rule of Five: Copy Assignment Operator
+TEST(MyVectorTest, CopyAssignmentOperator) {
+    MyVector<int> vec1;
+    vec1.push_back(1);
+    vec1.push_back(2);
+    vec1.push_back(3);
+
+    MyVector<int> vec2;
+    vec2 = vec1; // Copy assignment operator
+
+    EXPECT_EQ(vec2.get_size(), 3);
+    EXPECT_EQ(vec2[0], 1);
+    EXPECT_EQ(vec2[1], 2);
+    EXPECT_EQ(vec2[2], 3);
+}
+
+// Test Rule of Five: Move Constructor
+TEST(MyVectorTest, MoveConstructor) {
+    MyVector<int> vec1;
+    vec1.push_back(1);
+    vec1.push_back(2);
+    vec1.push_back(3);
+
+    MyVector<int> vec2 = std::move(vec1); // Move constructor
+
+    EXPECT_EQ(vec2.get_size(), 3);
+    EXPECT_EQ(vec2[0], 1);
+    EXPECT_EQ(vec2[1], 2);
+    EXPECT_EQ(vec2[2], 3);
+    EXPECT_EQ(vec1.get_size(), 0); // vec1 should be empty after the move
+}
+
+// Test Rule of Five: Move Assignment Operator
+TEST(MyVectorTest, MoveAssignmentOperator) {
+    MyVector<int> vec1;
+    vec1.push_back(1);
+    vec1.push_back(2);
+    vec1.push_back(3);
+
+    MyVector<int> vec2;
+    vec2 = std::move(vec1); // Move assignment operator
+
+    EXPECT_EQ(vec2.get_size(), 3);
+    EXPECT_EQ(vec2[0], 1);
+    EXPECT_EQ(vec2[1], 2);
+    EXPECT_EQ(vec2[2], 3);
+    EXPECT_EQ(vec1.get_size(), 0); // vec1 should be empty after the move
+}
+
 
 // Test push_back
 TEST(MyVectorTest, PushBack) {

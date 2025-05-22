@@ -28,6 +28,7 @@ set(SOURCES
     src/repositories/students-vector-repository.cpp
     src/repositories/students-list-repository.cpp
     src/repositories/students-deque-repository.cpp
+    src/repositories/students-my-vector-repository.cpp
     src/services/rule-of-five-test-service.cpp
     src/services/create-students-automatically-service.cpp
     src/services/generate-students-by-hand-service.cpp
@@ -81,6 +82,3 @@ target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
 
 enable_testing()
 add_test(NAME runTests COMMAND runTests)
-
-
-

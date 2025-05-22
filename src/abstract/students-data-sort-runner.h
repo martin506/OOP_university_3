@@ -3,6 +3,8 @@
 
 #include <memory>
 
+#include "../containers/my-vector-container.h"
+
 #include "../repositories/contracts/input-manager-repository-contract.h"
 #include "../repositories/abstract/input-manager-repository.h"
 #include "../repositories/contracts/students-repository-contract.h"
@@ -10,6 +12,7 @@
 #include "../repositories/abstract/students-vector-repository.h"
 #include "../repositories/abstract/students-list-repository.h"
 #include "../repositories/abstract/students-deque-repository.h"
+#include "../repositories/abstract/students-my-vector-repository.h"
 
 #include "../services/usecases/rule-of-five-test-usecase.h"
 #include "../services/abstract/rule-of-five-test-service.h"
@@ -66,6 +69,7 @@ public:
     void useVectors();
     void useDeques();
     void useLists();
+    void useMyVectors();
     void updateServices();
 };
 

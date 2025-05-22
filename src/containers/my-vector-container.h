@@ -40,6 +40,8 @@ public:
     void insert(size_t index, const T& element); // Insert element at a specific index
     void erase(size_t index); // Remove element at a specific index
 
+    void erase(T* first, T* last); // Remove elements in a range
+
     T* begin(); // Iterator to the beginning
     T* end();   // Iterator to the end
 
@@ -64,6 +66,59 @@ public:
 template <typename T>
 MyVector<T>::MyVector() : arr(nullptr), size(0), capacity(0) {}
 
+// copy constructor
+template <typename T>
+MyVector<T>::MyVector(const MyVector& other)
+    : size(other.size), capacity(other.capacity), arr(std::make_unique<T[]>(other.capacity)) {
+    for (size_t i = 0; i < other.size; ++i) {
+        arr[i] = other.arr[i];
+    }
+}
+
+// copy assignment operator
+template <typename T>
+MyVector<T>& MyVector<T>::operator=(const MyVector& other) {
+    if (this == &other) {
+        return *this; // Handle self-assignment
+    }
+
+    size = other.size;
+    capacity = other.capacity;
+    arr = std::make_unique<T[]>(other.capacity);
+
+    for (size_t i = 0; i < other.size; ++i) {
+        arr[i] = other.arr[i];
+    }
+
+    return *this;
+}
+
+// move assignment operator
+template <typename T>
+MyVector<T>::MyVector(MyVector&& other) noexcept
+    : size(other.size), capacity(other.capacity), arr(std::move(other.arr)) {
+    other.size = 0;
+    other.capacity = 0;
+}
+
+// move assignment operator
+template <typename T>
+MyVector<T>& MyVector<T>::operator=(MyVector&& other) noexcept {
+    if (this == &other) {
+        return *this; // Handle self-assignment
+    }
+
+    size = other.size;
+    capacity = other.capacity;
+    arr = std::move(other.arr);
+
+    other.size = 0;
+    other.capacity = 0;
+
+    return *this;
+}
+
+// Function to resize the vector when needed
 template <typename T>
 void MyVector<T>::resize() {
     size_t new_capacity = (capacity == 0) ? 1 : capacity * 2;
@@ -151,6 +206,22 @@ void MyVector<T>::erase(size_t index) {
         arr[i] = std::move(arr[i + 1]);
     }
     --size;
+}
+
+template <typename T>
+void MyVector<T>::erase(T* first, T* last) {
+    if (first < begin() || last > end() || first > last) {
+        throw std::out_of_range("Invalid range for erase");
+    }
+
+    size_t start_index = first - begin();
+    size_t end_index = last - begin();
+
+    for (size_t i = end_index; i < size; ++i) {
+        arr[start_index++] = std::move(arr[i]);
+    }
+
+    size -= (last - first);
 }
 
 template <typename T>

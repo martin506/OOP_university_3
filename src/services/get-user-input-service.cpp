@@ -26,9 +26,9 @@ void GetUserInputService::execute(bool needsParameter) {
         inputManager.setSortingChoice(static_cast<InputManager::SortingChoice>(sortingChoice));
 
         int containerChoice;
-        std::cout << "Enter Container Type (0: DEQUE, 1: VECTOR, 2: LIST): ";
+        std::cout << "Enter Container Type (0: DEQUE, 1: VECTOR, 2: LIST, 3: MYVECTOR): ";
         std::cin >> containerChoice;
-        if (containerChoice < 0 || containerChoice > 2 || std::cin.fail()) {
+        if (containerChoice < 0 || containerChoice > 3 || std::cin.fail()) {
             throw std::invalid_argument("Invalid container type choice");
         }
         inputManager.setChosenContainerType(static_cast<InputManager::ContainerType>(containerChoice));

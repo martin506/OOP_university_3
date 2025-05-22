@@ -58,6 +58,13 @@ void StudentsDataSortRunner::useDeques() {
     updateServices();
 }
 
+void StudentsDataSortRunner::useMyVectors() {
+    studentsRepo = std::make_unique<StudentsMyVectorRepository>(*inputManagerRepo);
+    goodStudentsRepo = std::make_unique<StudentsMyVectorRepository>(*inputManagerRepo);
+    badStudentsRepo = std::make_unique<StudentsMyVectorRepository>(*inputManagerRepo);
+    updateServices();
+}
+
 void StudentsDataSortRunner::run() {
     getUserInputService->execute(false);
     InputManager inputManager = inputManagerRepo->getInputManager();
@@ -86,6 +93,9 @@ void StudentsDataSortRunner::run() {
             break;
         case InputManager::LIST:
             useLists();
+            break;
+        case InputManager::MYVECTOR:
+            useMyVectors();
             break;
         default:
             throw std::invalid_argument("Invalid container type");
