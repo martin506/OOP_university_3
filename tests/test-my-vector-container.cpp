@@ -84,3 +84,42 @@ TEST(MyVectorTest, At) {
 
     EXPECT_THROW(vec.at(2), std::out_of_range);
 }
+
+// Test reserve and capacity
+TEST(MyVectorTest, ReserveAndCapacity) {
+    MyVector<int> vec;
+    vec.reserve(10);
+
+    EXPECT_EQ(vec.get_capacity(), 10);
+    EXPECT_EQ(vec.get_size(), 0);
+
+    vec.push_back(1);
+    EXPECT_EQ(vec.get_capacity(), 10);
+    EXPECT_EQ(vec.get_size(), 1);
+}
+
+// Test sort
+TEST(MyVectorTest, Sort) {
+    MyVector<int> vec;
+    vec.push_back(3);
+    vec.push_back(1);
+    vec.push_back(2);
+    vec.sort();
+
+    EXPECT_EQ(vec[0], 1);
+    EXPECT_EQ(vec[1], 2);
+    EXPECT_EQ(vec[2], 3);
+}
+
+// Test reverse
+TEST(MyVectorTest, Reverse) {
+    MyVector<int> vec;
+    vec.push_back(1);
+    vec.push_back(2);
+    vec.push_back(3);
+    vec.reverse();
+
+    EXPECT_EQ(vec[0], 3);
+    EXPECT_EQ(vec[1], 2);
+    EXPECT_EQ(vec[2], 1);
+}
