@@ -67,3 +67,18 @@ T& MyVector<T>::at(size_t index) {
     }
     return arr[index];
 }
+
+template <typename T>
+void MyVector<T>::insert(size_t index, const T& element) {
+    if (index > size) {
+        throw std::out_of_range("Index out of range");
+    }
+    if (size == capacity) {
+        resize();
+    }
+    for (size_t i = size; i > index; --i) {
+        arr[i] = std::move(arr[i - 1]);
+    }
+    arr[index] = element;
+    ++size;
+}
