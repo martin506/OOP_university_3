@@ -73,6 +73,7 @@ add_executable(runTests
     tests/test-main.cpp
     tests/test-student-model.cpp
     tests/test-my-vector-container.cpp
+    tests/test-capacity-equals-size.cpp
     src/models/student-model.cpp
     src/models/human-model.cpp
 )
