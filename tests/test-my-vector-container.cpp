@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../src/containers/abstract/my-vector-container.h"
+#include "../src/containers/my-vector-container.h"
 
 // Test default constructor
 TEST(MyVectorTest, DefaultConstructor) {

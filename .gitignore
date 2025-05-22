@@ -43,6 +43,7 @@ docs/latex/*.bbl
 docs/latex/*.dvi
 docs/latex/*.ps
 docs/latex/*.pdf
+docs
 
 # Ignore Doxygen HTML output
 docs/html/

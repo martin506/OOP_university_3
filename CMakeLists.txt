@@ -14,7 +14,7 @@ include_directories(
     src/services/abstract
     src/services/usecases
     src/tests/abstract
-    src/containers/abstract
+    src/containers
 )
 
 # Source files
