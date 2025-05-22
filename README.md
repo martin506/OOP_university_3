@@ -169,3 +169,6 @@ This project is an **Object-Oriented Programming (OOP)** task from university. I
 - `make`
 - **To run tests** `./runTests`
 - **To run program** `./OOPUzduotis2`
+
+## In order to download
+- there is a dmg file for setup in order to have the project on your own computer
