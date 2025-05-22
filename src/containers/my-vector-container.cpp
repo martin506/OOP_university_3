@@ -165,3 +165,13 @@ void MyVector<T>::reverse() {
     std::reverse(begin(), end());
 }
 
+template <typename T>
+void MyVector<T>::remove_if(bool (*predicate)(const T&)) {
+    size_t new_size = 0;
+    for (size_t i = 0; i < size; ++i) {
+        if (!predicate(arr[i])) {
+            arr[new_size++] = std::move(arr[i]);
+        }
+    }
+    size = new_size;
+}
