@@ -155,3 +155,13 @@ void MyVector<T>::shrink_to_fit() {
     }
 }
 
+template <typename T>
+void MyVector<T>::sort() {
+    std::sort(begin(), end());
+}
+
+template <typename T>
+void MyVector<T>::reverse() {
+    std::reverse(begin(), end());
+}
+
