@@ -17,3 +17,11 @@ void MyVector<T>::resize() {
     arr = std::move(new_arr);
     capacity = new_capacity;
 }
+
+template <typename T>
+void MyVector<T>::push_back(const T& element) {
+    if (size == capacity) {
+        resize();
+    }
+    arr[size++] = element;
+}
