@@ -54,3 +54,8 @@ template <typename T>
 size_t MyVector<T>::get_capacity() const {
     return capacity;
 }
+
+template <typename T>
+T& MyVector<T>::operator[](size_t index) {
+    return arr[index];
+}
