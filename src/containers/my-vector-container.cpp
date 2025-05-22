@@ -32,3 +32,10 @@ void MyVector<T>::pop_back() {
         --size;
     }
 }
+
+template <typename T>
+void MyVector<T>::clear() {
+    arr.reset();
+    size = 0;
+    capacity = 0;
+}
