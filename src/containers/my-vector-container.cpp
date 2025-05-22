@@ -39,3 +39,8 @@ void MyVector<T>::clear() {
     size = 0;
     capacity = 0;
 }
+
+template <typename T>
+bool MyVector<T>::empty() const {
+    return size == 0;
+}
