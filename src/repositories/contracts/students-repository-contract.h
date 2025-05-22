@@ -6,11 +6,13 @@
 #include <list>
 #include <deque>
 #include <variant>
+#include "../../containers/my-vector-container.h"
 
 using StudentContainer = std::variant<
     std::vector<Student>,
     std::list<Student>,
-    std::deque<Student>
+    std::deque<Student>,
+    MyVector<Student>
 >;
 
 class StudentsRepositoryContract {

@@ -16,7 +16,8 @@ public:
     enum ContainerType {
         DEQUE,
         VECTOR,
-        LIST
+        LIST,
+        MYVECTOR
     };
 
     enum StrategyChoice {
