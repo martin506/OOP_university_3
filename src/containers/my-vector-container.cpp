@@ -59,3 +59,11 @@ template <typename T>
 T& MyVector<T>::operator[](size_t index) {
     return arr[index];
 }
+
+template <typename T>
+T& MyVector<T>::at(size_t index) {
+    if (index >= size) {
+        throw std::out_of_range("Index out of range");
+    }
+    return arr[index];
+}
