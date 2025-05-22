@@ -25,3 +25,10 @@ void MyVector<T>::push_back(const T& element) {
     }
     arr[size++] = element;
 }
+
+template <typename T>
+void MyVector<T>::pop_back() {
+    if (size > 0) {
+        --size;
+    }
+}
