@@ -14,11 +14,13 @@ include_directories(
     src/services/abstract
     src/services/usecases
     src/tests/abstract
+    src/containers/abstract
 )
 
 # Source files
 set(SOURCES
     src/main.cpp
+    src/containers/my-vector-container.cpp
     src/models/input-manager-model.cpp
     src/models/human-model.cpp
     src/models/student-model.cpp
@@ -70,8 +72,10 @@ include_directories(${GTEST_INCLUDE_DIRS})
 add_executable(runTests
     tests/test-main.cpp
     tests/test-student-model.cpp
+    tests/test-my-vector-container.cpp
     src/models/student-model.cpp
     src/models/human-model.cpp
+    src/containers/my-vector-container.cpp
 )
 
 # Link Google Test libraries
