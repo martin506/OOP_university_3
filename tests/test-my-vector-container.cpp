@@ -123,3 +123,32 @@ TEST(MyVectorTest, Reverse) {
     EXPECT_EQ(vec[1], 2);
     EXPECT_EQ(vec[2], 1);
 }
+
+// Test remove_if
+TEST(MyVectorTest, RemoveIf) {
+    MyVector<int> vec;
+    vec.push_back(1);
+    vec.push_back(2);
+    vec.push_back(3);
+    vec.push_back(4);
+
+    vec.remove_if([](const int& x) { return x % 2 == 0; });
+
+    EXPECT_EQ(vec.get_size(), 2);
+    EXPECT_EQ(vec[0], 1);
+    EXPECT_EQ(vec[1], 3);
+}
+
+// Test fill
+TEST(MyVectorTest, Fill) {
+    MyVector<int> vec;
+    vec.push_back(1);
+    vec.push_back(2);
+    vec.push_back(3);
+    vec.fill(5);
+
+    EXPECT_EQ(vec[0], 5);
+    EXPECT_EQ(vec[1], 5);
+    EXPECT_EQ(vec[2], 5);
+}
+
