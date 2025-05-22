@@ -82,3 +82,14 @@ void MyVector<T>::insert(size_t index, const T& element) {
     arr[index] = element;
     ++size;
 }
+
+template <typename T>
+void MyVector<T>::erase(size_t index) {
+    if (index >= size) {
+        throw std::out_of_range("Index out of range");
+    }
+    for (size_t i = index; i < size - 1; ++i) {
+        arr[i] = std::move(arr[i + 1]);
+    }
+    --size;
+}
