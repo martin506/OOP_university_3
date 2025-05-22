@@ -1,0 +1,417 @@
+\doxysection{My\+Vector\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_my_vector}{}\label{class_my_vector}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+
+
+{\ttfamily \#include $<$my-\/vector-\/container.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_my_vector_ac356762c5ced52c0d934476cef32e472}{My\+Vector}} ()
+\item 
+\mbox{\hyperlink{class_my_vector_a3fc52bdbbc09ce9e5174cd9d44cf2e35}{\texorpdfstring{$\sim$}{\string~}\+My\+Vector}} ()=default
+\item 
+\mbox{\hyperlink{class_my_vector_a8f6c36029da3c2bf3e31f52ff003ad85}{My\+Vector}} (const \mbox{\hyperlink{class_my_vector}{My\+Vector}} \&other)
+\item 
+\mbox{\hyperlink{class_my_vector}{My\+Vector}} \& \mbox{\hyperlink{class_my_vector_a5e2dc2a708e624c4d5ee8275a3f6830f}{operator=}} (const \mbox{\hyperlink{class_my_vector}{My\+Vector}} \&other)
+\item 
+\mbox{\hyperlink{class_my_vector_a9ac75628da531820bc4f87863e0225da}{My\+Vector}} (\mbox{\hyperlink{class_my_vector}{My\+Vector}} \&\&other) noexcept
+\item 
+\mbox{\hyperlink{class_my_vector}{My\+Vector}} \& \mbox{\hyperlink{class_my_vector_a3a493fdcec3de7f814d0a79110793d1c}{operator=}} (\mbox{\hyperlink{class_my_vector}{My\+Vector}} \&\&other) noexcept
+\item 
+void \mbox{\hyperlink{class_my_vector_a8f761b370d19719a25710278528a7414}{push\+\_\+back}} (const T \&element)
+\item 
+void \mbox{\hyperlink{class_my_vector_aa896e95bb435535bdcc0b3e7bcb7f6fe}{pop\+\_\+back}} ()
+\item 
+void \mbox{\hyperlink{class_my_vector_adabde890d749f012b0c4dd1531f2fe80}{clear}} ()
+\item 
+bool \mbox{\hyperlink{class_my_vector_a4a4a32abfe8917612561fd8d3919bd2d}{empty}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_my_vector_aa5606e9ecb50fbda421c89ef3f0e2117}{get\+\_\+size}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_my_vector_abb4c7fbcfc76d37255d51d8e7e354f00}{get\+\_\+capacity}} () const
+\item 
+T \& \mbox{\hyperlink{class_my_vector_aeaedcd10f27b64d04b5c432fa1832671}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t index)
+\item 
+T \& \mbox{\hyperlink{class_my_vector_aff785efcfbc92400d9245f6fe119aa92}{at}} (size\+\_\+t index)
+\item 
+void \mbox{\hyperlink{class_my_vector_a789213789f1c35e413981fa36ef409ef}{insert}} (size\+\_\+t index, const T \&element)
+\item 
+void \mbox{\hyperlink{class_my_vector_a8504e546c42adf17402c86cc4bf9cd36}{erase}} (size\+\_\+t index)
+\item 
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_my_vector_afcde6f89e0fc20872cfee2a2a52e7570}{begin}} ()
+\item 
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_my_vector_a2c73623c89727375d0b3abff25a9c2d8}{end}} ()
+\item 
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_my_vector_ae01ba37e907ccd75b83639ab1b0a9fb6}{data}} ()
+\item 
+const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_my_vector_aadcd584653a4d3a80fc95db07a5edce1}{data}} () const
+\item 
+void \mbox{\hyperlink{class_my_vector_adc808a4bb625e88bf06e9bde8cfaa0f0}{swap}} (\mbox{\hyperlink{class_my_vector}{My\+Vector}} \&other)
+\item 
+void \mbox{\hyperlink{class_my_vector_a7ba922d20fec8901cb6eb5c4949826cd}{assign}} (size\+\_\+t count, const T \&value)
+\item 
+void \mbox{\hyperlink{class_my_vector_a44a390632701a01870d4d78452b22351}{reserve}} (size\+\_\+t new\+\_\+capacity)
+\item 
+void \mbox{\hyperlink{class_my_vector_a1a9ceb53cb836b3b3d8e1b06b102164d}{shrink\+\_\+to\+\_\+fit}} ()
+\item 
+void \mbox{\hyperlink{class_my_vector_aa987f42c96ae6c5ff8b59fd9459e86a3}{sort}} ()
+\item 
+void \mbox{\hyperlink{class_my_vector_a32704ab0f61d4d615250966736c16a9c}{reverse}} ()
+\item 
+void \mbox{\hyperlink{class_my_vector_a0be2b7c56a7896481f2814338252e923}{remove\+\_\+if}} (bool(\texorpdfstring{$\ast$}{*}predicate)(const T \&))
+\item 
+void \mbox{\hyperlink{class_my_vector_acd13cda80cb01a2297f3c8a5f6b29cd9}{swap\+\_\+elements}} (size\+\_\+t index1, size\+\_\+t index2)
+\item 
+void \mbox{\hyperlink{class_my_vector_a52876f1938a5b6bbcda78c2b98973187}{fill}} (const T \&value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_my_vector_a5a93808d7de6cd41f169e1eb036dbc15}{resize}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ T\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_my_vector_a2c7858ed479a0e94b4531d8614fa8961}{arr}}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_my_vector_a466cfbd3f2c7305f6a84dd698d75e8de}{size}}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_my_vector_a74eeeb68fb096d9c241d894aa284847f}{capacity}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_my_vector_ac356762c5ced52c0d934476cef32e472}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!MyVector@{MyVector}}
+\index{MyVector@{MyVector}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MyVector()}{MyVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_my_vector_ac356762c5ced52c0d934476cef32e472} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\mbox{\hyperlink{class_my_vector}{\+::\+My\+Vector}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_my_vector_ac356762c5ced52c0d934476cef32e472_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_my_vector_a3fc52bdbbc09ce9e5174cd9d44cf2e35}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!````~MyVector@{\texorpdfstring{$\sim$}{\string~}MyVector}}
+\index{````~MyVector@{\texorpdfstring{$\sim$}{\string~}MyVector}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MyVector()}{\string~MyVector()}}
+{\footnotesize\ttfamily \label{class_my_vector_a3fc52bdbbc09ce9e5174cd9d44cf2e35} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{class_my_vector}{My\+Vector}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{class_my_vector_a8f6c36029da3c2bf3e31f52ff003ad85}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!MyVector@{MyVector}}
+\index{MyVector@{MyVector}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MyVector()}{MyVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_my_vector_a8f6c36029da3c2bf3e31f52ff003ad85} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\mbox{\hyperlink{class_my_vector}{\+::\+My\+Vector}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_my_vector_a8f6c36029da3c2bf3e31f52ff003ad85_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_my_vector_a9ac75628da531820bc4f87863e0225da}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!MyVector@{MyVector}}
+\index{MyVector@{MyVector}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MyVector()}{MyVector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_my_vector_a9ac75628da531820bc4f87863e0225da} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\mbox{\hyperlink{class_my_vector}{\+::\+My\+Vector}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_my_vector_a9ac75628da531820bc4f87863e0225da_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_my_vector_a7ba922d20fec8901cb6eb5c4949826cd}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!assign@{assign}}
+\index{assign@{assign}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{assign()}{assign()}}
+{\footnotesize\ttfamily \label{class_my_vector_a7ba922d20fec8901cb6eb5c4949826cd} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::assign (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{count}{, }\item[{const T \&}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_my_vector_aff785efcfbc92400d9245f6fe119aa92}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!at@{at}}
+\index{at@{at}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily \label{class_my_vector_aff785efcfbc92400d9245f6fe119aa92} 
+template$<$typename T$>$ \\
+T \& \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::at (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_my_vector_afcde6f89e0fc20872cfee2a2a52e7570}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \label{class_my_vector_afcde6f89e0fc20872cfee2a2a52e7570} 
+template$<$typename T$>$ \\
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_my_vector_afcde6f89e0fc20872cfee2a2a52e7570_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_my_vector_adabde890d749f012b0c4dd1531f2fe80}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!clear@{clear}}
+\index{clear@{clear}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_my_vector_adabde890d749f012b0c4dd1531f2fe80} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_my_vector_ae01ba37e907ccd75b83639ab1b0a9fb6}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!data@{data}}
+\index{data@{data}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_my_vector_ae01ba37e907ccd75b83639ab1b0a9fb6} 
+template$<$typename T$>$ \\
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_my_vector_aadcd584653a4d3a80fc95db07a5edce1}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!data@{data}}
+\index{data@{data}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_my_vector_aadcd584653a4d3a80fc95db07a5edce1} 
+template$<$typename T$>$ \\
+const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_my_vector_a4a4a32abfe8917612561fd8d3919bd2d}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!empty@{empty}}
+\index{empty@{empty}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily \label{class_my_vector_a4a4a32abfe8917612561fd8d3919bd2d} 
+template$<$typename T$>$ \\
+bool \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_my_vector_a2c73623c89727375d0b3abff25a9c2d8}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!end@{end}}
+\index{end@{end}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \label{class_my_vector_a2c73623c89727375d0b3abff25a9c2d8} 
+template$<$typename T$>$ \\
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{class_my_vector_a2c73623c89727375d0b3abff25a9c2d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_my_vector_a8504e546c42adf17402c86cc4bf9cd36}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!erase@{erase}}
+\index{erase@{erase}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily \label{class_my_vector_a8504e546c42adf17402c86cc4bf9cd36} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_my_vector_a52876f1938a5b6bbcda78c2b98973187}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!fill@{fill}}
+\index{fill@{fill}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{fill()}{fill()}}
+{\footnotesize\ttfamily \label{class_my_vector_a52876f1938a5b6bbcda78c2b98973187} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::fill (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_my_vector_abb4c7fbcfc76d37255d51d8e7e354f00}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!get\_capacity@{get\_capacity}}
+\index{get\_capacity@{get\_capacity}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_capacity()}{get\_capacity()}}
+{\footnotesize\ttfamily \label{class_my_vector_abb4c7fbcfc76d37255d51d8e7e354f00} 
+template$<$typename T$>$ \\
+size\+\_\+t \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::get\+\_\+capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_my_vector_aa5606e9ecb50fbda421c89ef3f0e2117}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!get\_size@{get\_size}}
+\index{get\_size@{get\_size}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_size()}{get\_size()}}
+{\footnotesize\ttfamily \label{class_my_vector_aa5606e9ecb50fbda421c89ef3f0e2117} 
+template$<$typename T$>$ \\
+size\+\_\+t \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::get\+\_\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_my_vector_a789213789f1c35e413981fa36ef409ef}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily \label{class_my_vector_a789213789f1c35e413981fa36ef409ef} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index}{, }\item[{const T \&}]{element}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_my_vector_a789213789f1c35e413981fa36ef409ef_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_my_vector_a5e2dc2a708e624c4d5ee8275a3f6830f}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_my_vector_a5e2dc2a708e624c4d5ee8275a3f6830f} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_my_vector}{My\+Vector}} \& \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_my_vector_a5e2dc2a708e624c4d5ee8275a3f6830f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_my_vector_a3a493fdcec3de7f814d0a79110793d1c}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_my_vector_a3a493fdcec3de7f814d0a79110793d1c} 
+template$<$typename T$>$ \\
+\mbox{\hyperlink{class_my_vector}{My\+Vector}} \& \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_my_vector_a3a493fdcec3de7f814d0a79110793d1c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_my_vector_aeaedcd10f27b64d04b5c432fa1832671}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \label{class_my_vector_aeaedcd10f27b64d04b5c432fa1832671} 
+template$<$typename T$>$ \\
+T \& \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_my_vector_aa896e95bb435535bdcc0b3e7bcb7f6fe}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!pop\_back@{pop\_back}}
+\index{pop\_back@{pop\_back}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop\_back()}{pop\_back()}}
+{\footnotesize\ttfamily \label{class_my_vector_aa896e95bb435535bdcc0b3e7bcb7f6fe} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::pop\+\_\+back (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_my_vector_a8f761b370d19719a25710278528a7414}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}}
+{\footnotesize\ttfamily \label{class_my_vector_a8f761b370d19719a25710278528a7414} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{const T \&}]{element}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_my_vector_a8f761b370d19719a25710278528a7414_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_my_vector_a0be2b7c56a7896481f2814338252e923}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!remove\_if@{remove\_if}}
+\index{remove\_if@{remove\_if}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{remove\_if()}{remove\_if()}}
+{\footnotesize\ttfamily \label{class_my_vector_a0be2b7c56a7896481f2814338252e923} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::remove\+\_\+if (\begin{DoxyParamCaption}\item[{bool(\texorpdfstring{$\ast$}{*}}]{predicate~}{)(const T \&)}\end{DoxyParamCaption})}
+
+\Hypertarget{class_my_vector_a44a390632701a01870d4d78452b22351}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!reserve@{reserve}}
+\index{reserve@{reserve}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily \label{class_my_vector_a44a390632701a01870d4d78452b22351} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::reserve (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{new\+\_\+capacity}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_my_vector_a5a93808d7de6cd41f169e1eb036dbc15}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!resize@{resize}}
+\index{resize@{resize}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily \label{class_my_vector_a5a93808d7de6cd41f169e1eb036dbc15} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::resize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_my_vector_a5a93808d7de6cd41f169e1eb036dbc15_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_my_vector_a32704ab0f61d4d615250966736c16a9c}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!reverse@{reverse}}
+\index{reverse@{reverse}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{reverse()}{reverse()}}
+{\footnotesize\ttfamily \label{class_my_vector_a32704ab0f61d4d615250966736c16a9c} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::reverse (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_my_vector_a32704ab0f61d4d615250966736c16a9c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_my_vector_a1a9ceb53cb836b3b3d8e1b06b102164d}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!shrink\_to\_fit@{shrink\_to\_fit}}
+\index{shrink\_to\_fit@{shrink\_to\_fit}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{shrink\_to\_fit()}{shrink\_to\_fit()}}
+{\footnotesize\ttfamily \label{class_my_vector_a1a9ceb53cb836b3b3d8e1b06b102164d} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::shrink\+\_\+to\+\_\+fit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_my_vector_aa987f42c96ae6c5ff8b59fd9459e86a3}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!sort@{sort}}
+\index{sort@{sort}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{sort()}{sort()}}
+{\footnotesize\ttfamily \label{class_my_vector_aa987f42c96ae6c5ff8b59fd9459e86a3} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::sort (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{class_my_vector_aa987f42c96ae6c5ff8b59fd9459e86a3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_my_vector_adc808a4bb625e88bf06e9bde8cfaa0f0}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!swap@{swap}}
+\index{swap@{swap}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily \label{class_my_vector_adc808a4bb625e88bf06e9bde8cfaa0f0} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_my_vector_adc808a4bb625e88bf06e9bde8cfaa0f0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_my_vector_acd13cda80cb01a2297f3c8a5f6b29cd9}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!swap\_elements@{swap\_elements}}
+\index{swap\_elements@{swap\_elements}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{swap\_elements()}{swap\_elements()}}
+{\footnotesize\ttfamily \label{class_my_vector_acd13cda80cb01a2297f3c8a5f6b29cd9} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::swap\+\_\+elements (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index1}{, }\item[{size\+\_\+t}]{index2}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_my_vector_a2c7858ed479a0e94b4531d8614fa8961}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!arr@{arr}}
+\index{arr@{arr}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{arr}{arr}}
+{\footnotesize\ttfamily \label{class_my_vector_a2c7858ed479a0e94b4531d8614fa8961} 
+template$<$typename T$>$ \\
+std\+::unique\+\_\+ptr$<$T\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::arr\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_my_vector_a74eeeb68fb096d9c241d894aa284847f}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{capacity}{capacity}}
+{\footnotesize\ttfamily \label{class_my_vector_a74eeeb68fb096d9c241d894aa284847f} 
+template$<$typename T$>$ \\
+size\+\_\+t \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::capacity\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_my_vector_a466cfbd3f2c7305f6a84dd698d75e8de}\index{MyVector$<$ T $>$@{MyVector$<$ T $>$}!size@{size}}
+\index{size@{size}!MyVector$<$ T $>$@{MyVector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \label{class_my_vector_a466cfbd3f2c7305f6a84dd698d75e8de} 
+template$<$typename T$>$ \\
+size\+\_\+t \mbox{\hyperlink{class_my_vector}{My\+Vector}}$<$ T $>$\+::size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/containers/abstract/\mbox{\hyperlink{my-vector-container_8h}{my-\/vector-\/container.\+h}}\end{DoxyCompactItemize}

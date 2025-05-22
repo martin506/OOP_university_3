@@ -20,7 +20,6 @@ include_directories(
 # Source files
 set(SOURCES
     src/main.cpp
-    src/containers/my-vector-container.cpp
     src/models/input-manager-model.cpp
     src/models/human-model.cpp
     src/models/student-model.cpp
@@ -75,7 +74,6 @@ add_executable(runTests
     tests/test-my-vector-container.cpp
     src/models/student-model.cpp
     src/models/human-model.cpp
-    src/containers/my-vector-container.cpp
 )
 
 # Link Google Test libraries
