@@ -93,3 +93,14 @@ void MyVector<T>::erase(size_t index) {
     }
     --size;
 }
+
+template <typename T>
+T* MyVector<T>::begin() {
+    return arr.get();
+}
+
+template <typename T>
+T* MyVector<T>::end() {
+    return arr.get() + size;
+}
+
