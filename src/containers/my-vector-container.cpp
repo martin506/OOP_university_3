@@ -104,3 +104,13 @@ T* MyVector<T>::end() {
     return arr.get() + size;
 }
 
+template <typename T>
+T* MyVector<T>::data() {
+    return arr.get();
+}
+
+template <typename T>
+const T* MyVector<T>::data() const {
+    return arr.get();
+}
+
